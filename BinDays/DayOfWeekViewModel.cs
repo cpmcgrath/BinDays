@@ -13,7 +13,7 @@ namespace CMcG.BinDays
 
         public override string ToString()
         {
-            return DateTime.Today.DayOfWeek == Day ? "Today" : Day.ToString();
+            return Day.ToRelativeString();
         }
 
         public override bool Equals(object obj)

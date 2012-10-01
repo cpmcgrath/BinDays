@@ -14,9 +14,7 @@ namespace CMcG.BinDays
                 var tile  = ShellTile.ActiveTiles.First();
                 tile.Update(new StandardTileData
                            {
-                               Title           = DateTime.Today.DayOfWeek == setup.DateOfCollection.DayOfWeek
-                                               ? "Today"
-                                               : setup.DateOfCollection.DayOfWeek.ToString(),
+                               Title           = setup.DateOfCollection.DayOfWeek.ToRelativeString(),
                                BackContent     = "",//setup.CalculateIfNextIsRecycling() ? "recycling" : "not recycling",
                                BackgroundImage = new Uri(setup.CalculateIfNextIsRecycling() ? "/Images/TileRecycle.png" : "/Images/TileBlackBin.png", UriKind.Relative)
                            });
