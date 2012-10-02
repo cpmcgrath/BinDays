@@ -79,8 +79,7 @@ namespace CMcG.BinDays
                 Description = "Updates whether it's a recycling week or not"
             });
 
-            //ScheduledActionService.LaunchForTest(taskName,
-            //    TimeSpan.FromSeconds(15));
+            //ScheduledActionService.LaunchForTest(taskName, TimeSpan.FromSeconds(15));
         }
 
         #region Phone application initialization

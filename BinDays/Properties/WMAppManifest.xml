@@ -23,7 +23,7 @@
         <BackgroundServiceAgent Specifier="ScheduledTaskAgent"
                                 Name="BinDays.Agent"
                                 Source="BinDays.Agent"
-                                Type="BinDays.Agent.ScheduledAgent" />
+                                Type="CMcG.BinDays.Agent.ScheduledAgent" />
       </ExtendedTask>
     </Tasks>
     <Tokens>
