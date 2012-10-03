@@ -7,7 +7,7 @@ namespace CMcG.BinDays
     {
         public static DateTime Next(this DateTime instance, DayOfWeek day)
         {
-            int fromDiff = ((int)day - (int)instance.DayOfWeek) % 6;
+            int fromDiff = ((int)day - (int)instance.DayOfWeek + 7) % 7;
             return instance.AddDays(fromDiff);
         }
 
