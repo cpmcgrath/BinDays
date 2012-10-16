@@ -1,13 +1,26 @@
 using System;
 using System.Linq;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Info;
 
 namespace CMcG.BinDays
 {
     public class LiveTileUpdater
     {
+        public static bool IsLowMemDevice
+        {
+            get
+            {
+                long result = (long)DeviceExtendedProperties.GetValue("ApplicationWorkingSetLimit");
+                return result < 94371840L;
+            }
+        }
+
         public void UpdateTile()
         {
+            if (IsLowMemDevice)
+                return;
+
             using (var context = new DataStoreContext())
             {
                 var setup = context.CurrentSetup;

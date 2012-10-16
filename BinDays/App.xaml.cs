@@ -5,6 +5,7 @@ using Microsoft.Phone.Shell;
 using Microsoft.Phone.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Scheduler;
+using Microsoft.Phone.Info;
 
 namespace CMcG.BinDays
 {
@@ -67,8 +68,19 @@ namespace CMcG.BinDays
                 System.Diagnostics.Debugger.Break();
         }
 
+        public static bool IsLowMemDevice
+        {
+            get
+            {
+                long result = (long)DeviceExtendedProperties.GetValue("ApplicationWorkingSetLimit");
+                return result < 94371840L;
+            }
+        }
+
         void StartBackgroundAgent()
         {
+            if (IsLowMemDevice)
+                return;
             var taskName = "BinDays.Agent";
 
             if (ScheduledActionService.Find(taskName) is PeriodicTask)
