@@ -18,8 +18,14 @@ namespace CMcG.BinDays
 
         public void UpdateTile()
         {
-            if (IsLowMemDevice)
-                return;
+            try
+            {
+                if (IsLowMemDevice)
+                    return;
+            }
+            catch
+            {
+            }
 
             using (var context = new DataStoreContext())
             {

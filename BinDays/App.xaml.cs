@@ -79,17 +79,23 @@ namespace CMcG.BinDays
 
         void StartBackgroundAgent()
         {
-            if (IsLowMemDevice)
-                return;
-            var taskName = "BinDays.Agent";
-
-            if (ScheduledActionService.Find(taskName) is PeriodicTask)
-                ScheduledActionService.Remove(taskName);
-
-            ScheduledActionService.Add(new PeriodicTask(taskName)
+            try
             {
-                Description = "Updates whether it's a recycling week or not"
-            });
+                if (IsLowMemDevice)
+                    return;
+                var taskName = "BinDays.Agent";
+
+                if (ScheduledActionService.Find(taskName) is PeriodicTask)
+                    ScheduledActionService.Remove(taskName);
+
+                ScheduledActionService.Add(new PeriodicTask(taskName)
+                {
+                    Description = "Updates whether it's a recycling week or not"
+                });
+            }
+            catch
+            {
+            }
 
             //ScheduledActionService.LaunchForTest(taskName, TimeSpan.FromSeconds(15));
         }
