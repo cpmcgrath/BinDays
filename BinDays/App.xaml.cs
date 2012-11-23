@@ -72,8 +72,7 @@ namespace CMcG.BinDays
         {
             get
             {
-                long result = (long)DeviceExtendedProperties.GetValue("ApplicationWorkingSetLimit");
-                return result < 94371840L;
+                return (long)DeviceExtendedProperties.GetValue("DeviceTotalMemory") <= 268435456;
             }
         }
 
