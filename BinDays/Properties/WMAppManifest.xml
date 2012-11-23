@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
-  <App xmlns="" ProductID="{28b5baef-c99b-4959-9e20-73b4dd1b10e9}" Title="Bin Days" RuntimeType="Silverlight" Version="1.1.0.0" Genre="apps.normal" Author="Chris McGrath" Description="Sample description" Publisher="Chris McGrath">
+  <App xmlns="" ProductID="{28b5baef-c99b-4959-9e20-73b4dd1b10e9}" Title="Bin Days" RuntimeType="Silverlight" Version="2.0.0.0" Genre="apps.normal" Author="Chris McGrath" Description="Live tile for bin days" Publisher="Chris McGrath">
     <IconPath IsRelative="true" IsResource="false">Images\Icon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_IDENTITY_DEVICE" />
