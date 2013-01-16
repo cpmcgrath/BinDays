@@ -93,10 +93,12 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BinType.cs" />
     <Compile Include="DataStoreContext.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="LiveTileUpdater.cs" />
     <Compile Include="NotifyBase.cs" />
+    <Compile Include="RubbishBin.cs" />
     <Compile Include="ScheduledAgent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />

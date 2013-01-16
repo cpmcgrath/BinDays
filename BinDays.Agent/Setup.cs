@@ -1,6 +1,5 @@
 using System;
 using System.Data.Linq.Mapping;
-using System.ComponentModel;
 
 namespace CMcG.BinDays
 {
@@ -8,8 +7,8 @@ namespace CMcG.BinDays
     public class Setup : NotifyBase
     {
         int      m_id;
-        DateTime m_dateOfCollection { get; set; }
-        bool     m_isRecycling      { get; set; }
+        DateTime m_dateOfCollection;
+        bool     m_isRecycling;
 
         [Column(IsPrimaryKey=true)]
         public int Id
