@@ -69,7 +69,7 @@ namespace CMcG.BinDays
 
         public DateTime NextCollectionDate
         {
-            get { return m_originDate; }
+            get { return m_originDate.ToNext(Interval); }
         }
     }
 }

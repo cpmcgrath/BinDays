@@ -29,9 +29,9 @@
     <Tokens>
       <PrimaryToken TokenID="BinDaysToken" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsResource="false" IsRelative="true">Images\TileBlackBin.png</SmallImageURI>
+          <SmallImageURI IsResource="false" IsRelative="true">Images\TileGeneralWasteRecycleGreen.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsResource="false" IsRelative="true">Images\TileBlackBin.png</BackgroundImageURI>
+          <BackgroundImageURI IsResource="false" IsRelative="true">Images\TileGeneralWasteRecycleGreen.png</BackgroundImageURI>
           <Title>Bin Days</Title>
           <BackContent></BackContent>
           <BackBackgroundImageURI></BackBackgroundImageURI>

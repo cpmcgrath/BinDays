@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace CMcG.BinDays
@@ -9,6 +10,18 @@ namespace CMcG.BinDays
         {
             int fromDiff = ((int)day - (int)instance.DayOfWeek + 7) % 7;
             return instance.AddDays(fromDiff);
+        }
+
+        public static DateTime ToNext(this DateTime instance, int interval)
+        {
+            var difference  = DateTime.Today.AddDays(-1) - instance;
+            var fullPeriods = (difference.Days + interval) % interval;
+            return instance.AddDays(fullPeriods * interval);
+        }
+
+        public static string Aggregate(this IEnumerable<string> source, string join)
+        {
+            return string.Join(join, source.ToArray());
         }
 
         public static string ToRelativeString(this DayOfWeek day)

@@ -28,13 +28,19 @@ namespace CMcG.BinDays
 
             using (var context = new DataStoreContext())
             {
-                var setup = context.CurrentSetup;
+                var bins = context.NextBinDay;
+
+                if (!bins.Any())
+                    return;
+
+                var tileImage = "/Images/Tile" + bins.OrderBy(x => x.BinType).Select(x => x.BinType.ToString()).Aggregate("") + ".png";
+
                 var tile  = ShellTile.ActiveTiles.First();
                 tile.Update(new StandardTileData
                            {
-                               Title           = setup.DateOfCollection.DayOfWeek.ToRelativeString(),
+                               Title           = bins.First().NextCollectionDate.DayOfWeek.ToRelativeString(),
                                BackContent     = "",//setup.CalculateIfNextIsRecycling() ? "recycling" : "not recycling",
-                               BackgroundImage = new Uri(setup.CalculateIfNextIsRecycling() ? "/Images/TileRecycle.png" : "/Images/TileBlackBin.png", UriKind.Relative)
+                               BackgroundImage = new Uri(tileImage, UriKind.Relative)
                            });
             }
         }

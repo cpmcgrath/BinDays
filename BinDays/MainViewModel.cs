@@ -11,8 +11,12 @@ namespace CMcG.BinDays
             Status = new AppStatus { AutoRemove = true };
             using (var context = new DataStoreContext())
             {
-                CollectionDay = new DayOfWeekViewModel(context.CurrentSetup.DateOfCollection.DayOfWeek);
-                IsRecycling   = context.CurrentSetup.CalculateIfNextIsRecycling();
+                var bins = context.NextBinDay;
+                if (!bins.Any())
+                    return;
+
+                CollectionDay = new DayOfWeekViewModel(bins.First().NextCollectionDate.DayOfWeek);
+                IsRecycling   = bins.Any(x => x.BinType == BinType.Recycling);
             }
         }
 
@@ -41,12 +45,26 @@ namespace CMcG.BinDays
         {
             using (var context = new DataStoreContext())
             {
-                var setup              = context.CurrentSetup;
-                setup.DateOfCollection = DateTime.Today.Next(CollectionDay.Day);
-                setup.IsRecycling      = IsRecycling;
+                var normal = context.RubbishBins.FirstOrDefault(x => x.BinType == BinType.GeneralWaste);
+                bool hasNormal = normal != null;
+                normal = normal ?? new RubbishBin { BinType = BinType.GeneralWaste };
+                normal.Interval = 7;
+                normal.OriginDate = DateTime.Today.Next(CollectionDay.Day);
 
-                if (!context.Setup.Any())
-                    context.Setup.InsertOnSubmit(setup);
+                if (!hasNormal)
+                    context.RubbishBins.InsertOnSubmit(normal);
+
+                var recycle = context.RubbishBins.FirstOrDefault(x => x.BinType == BinType.Recycling);
+                bool hasRecycle = recycle != null;
+                recycle = recycle ?? new RubbishBin { BinType = BinType.Recycling };
+                recycle.Interval = 14;
+                recycle.OriginDate = DateTime.Today.Next(CollectionDay.Day);
+                if (IsRecycling)
+                    recycle.OriginDate = recycle.OriginDate.AddDays(7);
+
+
+                if (!hasRecycle)
+                    context.RubbishBins.InsertOnSubmit(recycle);
 
                 context.SubmitChanges();
             }

@@ -29,8 +29,8 @@ namespace CMcG.BinDays
 
                     if (Setup.Any())
                     {
-                        var general   = new RubbishBin { BinType = BinType.GeneralWaste, Interval =  7, DateOfCollection = CurrentSetup.DateOfCollection };
-                        var recycling = new RubbishBin { BinType = BinType.Recycling,    Interval = 14, DateOfCollection = CurrentSetup.DateOfCollection.AddDays(CurrentSetup.IsRecycling ? 0 : 7) };
+                        var general   = new RubbishBin { BinType = BinType.GeneralWaste, Interval =  7, OriginDate = CurrentSetup.DateOfCollection };
+                        var recycling = new RubbishBin { BinType = BinType.Recycling,    Interval = 14, OriginDate = CurrentSetup.DateOfCollection.AddDays(CurrentSetup.IsRecycling ? 0 : 7) };
 
                         RubbishBins.InsertAllOnSubmit(new[] { general, recycling });
                         Setup.DeleteAllOnSubmit(Setup);
@@ -64,10 +64,7 @@ namespace CMcG.BinDays
 
         public RubbishBin[] NextBinDay
         {
-            get
-            {
-                RubbishBins.Select(x => x.)
-            }
+            get { return RubbishBins.Where(x => x.NextCollectionDate == RubbishBins.Max(y => y.NextCollectionDate)).ToArray(); }
         }
     }
 }

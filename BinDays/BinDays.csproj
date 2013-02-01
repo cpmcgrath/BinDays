@@ -144,8 +144,13 @@
     <Content Include="Images\Tile.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\TileBlackBin.png" />
+    <Content Include="Images\TileGeneralWasteRecycleGreen.png" />
+    <Content Include="Images\TileGreen.png" />
+    <Content Include="Images\TileGeneralWaste.png" />
+    <Content Include="Images\TileGeneralWasteGreen.png" />
+    <Content Include="Images\TileGeneralWasteRecycle.png" />
     <Content Include="Images\TileRecycle.png" />
+    <Content Include="Images\TileRecycleGreen.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
