@@ -11,7 +11,7 @@ namespace CMcG.BinDays
         DateTime m_originDate;
         int      m_interval;
 
-        [Column(IsPrimaryKey = true)]
+        [Column(IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id
         {
             get { return m_id; }

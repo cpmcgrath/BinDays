@@ -45,21 +45,21 @@ namespace CMcG.BinDays
         {
             using (var context = new DataStoreContext())
             {
-                var normal = context.RubbishBins.FirstOrDefault(x => x.BinType == BinType.GeneralWaste);
-                bool hasNormal = normal != null;
-                normal = normal ?? new RubbishBin { BinType = BinType.GeneralWaste };
-                normal.Interval = 7;
+                var normal        = context.RubbishBins.FirstOrDefault(x => x.BinType == BinType.GeneralWaste);
+                bool hasNormal    = normal != null;
+                normal            = normal ?? new RubbishBin { BinType = BinType.GeneralWaste };
+                normal.Interval   = 7;
                 normal.OriginDate = DateTime.Today.Next(CollectionDay.Day);
 
                 if (!hasNormal)
                     context.RubbishBins.InsertOnSubmit(normal);
 
-                var recycle = context.RubbishBins.FirstOrDefault(x => x.BinType == BinType.Recycling);
-                bool hasRecycle = recycle != null;
-                recycle = recycle ?? new RubbishBin { BinType = BinType.Recycling };
-                recycle.Interval = 14;
+                var recycle        = context.RubbishBins.FirstOrDefault(x => x.BinType == BinType.Recycling);
+                bool hasRecycle    = recycle != null;
+                recycle            = recycle ?? new RubbishBin { BinType = BinType.Recycling };
+                recycle.Interval   = 14;
                 recycle.OriginDate = DateTime.Today.Next(CollectionDay.Day);
-                if (IsRecycling)
+                if (!IsRecycling)
                     recycle.OriginDate = recycle.OriginDate.AddDays(7);
 
 

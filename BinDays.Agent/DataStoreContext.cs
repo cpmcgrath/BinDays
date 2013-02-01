@@ -64,7 +64,14 @@ namespace CMcG.BinDays
 
         public RubbishBin[] NextBinDay
         {
-            get { return RubbishBins.Where(x => x.NextCollectionDate == RubbishBins.Max(y => y.NextCollectionDate)).ToArray(); }
+            get
+            {
+                if (!RubbishBins.Any())
+                    return new RubbishBin[0];
+
+                var nextDay = RubbishBins.ToArray().Min(y => y.NextCollectionDate);
+                return RubbishBins.ToArray().Where(x => x.NextCollectionDate == nextDay).ToArray();
+            }
         }
     }
 }

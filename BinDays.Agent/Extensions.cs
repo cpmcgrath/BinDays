@@ -15,8 +15,8 @@ namespace CMcG.BinDays
         public static DateTime ToNext(this DateTime instance, int interval)
         {
             var difference  = DateTime.Today.AddDays(-1) - instance;
-            var fullPeriods = (difference.Days + interval) % interval;
-            return instance.AddDays(fullPeriods * interval);
+            var offset = interval - (difference.Days + interval) % interval;
+            return DateTime.Today.AddDays(offset - 1);
         }
 
         public static string Aggregate(this IEnumerable<string> source, string join)
