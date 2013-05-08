@@ -14,8 +14,8 @@ namespace CMcG.BinDays
 
         public static DateTime ToNext(this DateTime instance, int interval)
         {
-            var difference  = DateTime.Today.AddDays(-1) - instance;
-            var offset = interval - (difference.Days + interval) % interval;
+            var difference = DateTime.Today.AddDays(-1) - instance;
+            var offset     = interval - (difference.Days + interval) % interval;
             return DateTime.Today.AddDays(offset - 1);
         }
 

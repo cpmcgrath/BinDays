@@ -36,11 +36,12 @@ namespace CMcG.BinDays
                 var tileImage = "/Images/Tile" + bins.OrderBy(x => x.BinType).Select(x => x.BinType.ToString()).Aggregate("") + ".png";
 
                 var tile  = ShellTile.ActiveTiles.First();
-                tile.Update(new StandardTileData
+                tile.Update(new FlipTileData
                            {
-                               Title           = bins.First().NextCollectionDate.DayOfWeek.ToRelativeString(),
-                               BackContent     = "",//setup.CalculateIfNextIsRecycling() ? "recycling" : "not recycling",
-                               BackgroundImage = new Uri(tileImage, UriKind.Relative)
+                               Title                = bins.First().NextCollectionDate.DayOfWeek.ToRelativeString(),
+                               BackContent          = "",
+                               BackgroundImage      = new Uri(tileImage, UriKind.Relative),
+                               SmallBackgroundImage = new Uri(tileImage, UriKind.Relative),
                            });
             }
         }
