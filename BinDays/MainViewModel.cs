@@ -9,6 +9,7 @@ namespace CMcG.BinDays
         public MainViewModel()
         {
             Status = new AppStatus { AutoRemove = true };
+            CollectionDay = new DayOfWeekViewModel(DateTime.Today.DayOfWeek);
             using (var context = new DataStoreContext())
             {
                 var bins = context.NextBinDay;
