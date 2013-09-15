@@ -161,6 +161,10 @@
       <Project>{117CE90B-55E9-42CC-B493-DD89F56FA21D}</Project>
       <Name>BinDays.Agent</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BinDays.Business\BinDays.Business.csproj">
+      <Project>{0F72C768-F407-4B62-B66C-37515753E9F1}</Project>
+      <Name>BinDays.Business</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
