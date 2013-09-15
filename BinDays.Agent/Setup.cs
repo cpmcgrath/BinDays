@@ -6,11 +6,9 @@ namespace CMcG.BinDays
     [Table]
     public class Setup : NotifyBase
     {
-        int      m_id;
-        DateTime m_dateOfCollection;
-        bool     m_isRecycling;
-
-        [Column(IsPrimaryKey=true)]
+        #region public int      Id               { get; set; }
+        int m_id;
+        [Column(IsPrimaryKey = true)]
         public int Id
         {
             get { return m_id; }
@@ -23,6 +21,9 @@ namespace CMcG.BinDays
                 FirePropertyChanged("Id");
             }
         }
+        #endregion
+        #region public DateTime DateOfCollection { get; set; }
+        DateTime m_dateOfCollection;
 
         [Column]
         public DateTime DateOfCollection
@@ -37,6 +38,9 @@ namespace CMcG.BinDays
                 FirePropertyChanged("DateOfCollection");
             }
         }
+        #endregion
+        #region public bool     IsRecycling      { get; set; }
+        bool m_isRecycling;
 
         [Column]
         public bool IsRecycling
@@ -51,6 +55,7 @@ namespace CMcG.BinDays
                 FirePropertyChanged("IsRecycling");
             }
         }
+        #endregion
 
         public bool CalculateIfNextIsRecycling()
         {

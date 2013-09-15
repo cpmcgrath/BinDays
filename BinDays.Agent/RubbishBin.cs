@@ -6,10 +6,8 @@ namespace CMcG.BinDays
     [Table]
     public class RubbishBin : NotifyBase
     {
+        #region public int      Id         { get; set; }
         int      m_id;
-        BinType  m_binType;
-        DateTime m_originDate;
-        int      m_interval;
 
         [Column(IsPrimaryKey = true, IsDbGenerated = true)]
         public int Id
@@ -24,6 +22,9 @@ namespace CMcG.BinDays
                 FirePropertyChanged("Id");
             }
         }
+        #endregion
+        #region public BinType  BinType    { get; set; }
+        BinType  m_binType;
 
         [Column]
         public BinType BinType
@@ -38,6 +39,9 @@ namespace CMcG.BinDays
                 FirePropertyChanged("BinType");
             }
         }
+        #endregion
+        #region public DateTime OriginDate { get; set; }
+        DateTime m_originDate;
 
         [Column]
         public DateTime OriginDate
@@ -52,7 +56,9 @@ namespace CMcG.BinDays
                 FirePropertyChanged("OriginDate");
             }
         }
-
+        #endregion
+        #region public int      Interval   { get; set; }
+        int      m_interval;
         [Column]
         public int Interval
         {
@@ -66,6 +72,7 @@ namespace CMcG.BinDays
                 FirePropertyChanged("Interval");
             }
         }
+        #endregion
 
         public DateTime NextCollectionDate
         {
