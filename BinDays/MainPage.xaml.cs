@@ -18,5 +18,10 @@ namespace CMcG.BinDays
         {
             ((MainViewModel)DataContext).Save();
         }
+
+        void GoToNew(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/ViewMain.xaml", UriKind.Relative));
+        }
     }
 }
