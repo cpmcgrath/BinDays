@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using Microsoft.Phone.Shell;
 using Microsoft.Phone.Info;
+using CMcG.BinDays.Business.LiveTiles;
 
 namespace CMcG.BinDays
 {
@@ -34,15 +35,16 @@ namespace CMcG.BinDays
                 if (!bins.Any())
                     return;
 
-                var tileImage = "/Images/Tile" + bins.OrderBy(x => x.BinType).Select(x => x.BinType.ToString()).Aggregate("") + ".png";
+                new TileExporter().Export(bins);
 
                 var tile  = ShellTile.ActiveTiles.First();
                 tile.Update(new FlipTileData
                            {
-                               Title                = bins.First().NextCollectionDate.DayOfWeek.ToRelativeString(),
+                               Title                = "",
                                BackContent          = "",
-                               BackgroundImage      = new Uri(tileImage, UriKind.Relative),
-                               SmallBackgroundImage = new Uri(tileImage, UriKind.Relative),
+                               BackgroundImage      = new Uri("isostore:/Shared/ShellContent/StandardTile.jpg", UriKind.Absolute),
+                               SmallBackgroundImage = new Uri("isostore:/Shared/ShellContent/SmallTile.jpg",    UriKind.Absolute),
+                               WideBackgroundImage  = new Uri("isostore:/Shared/ShellContent/WideTile.jpg",     UriKind.Absolute),
                            });
             }
         }
