@@ -11,20 +11,21 @@ namespace CMcG.BinDays
         {
             get
             {
-                return (long)DeviceExtendedProperties.GetValue("DeviceTotalMemory") <= 268435456;
+                try
+                {
+                    return (long)DeviceExtendedProperties.GetValue("DeviceTotalMemory") <= 268435456;
+                }
+                catch
+                {
+                    return false;
+                }
             }
         }
 
         public void UpdateTile()
         {
-            try
-            {
-                if (IsLowMemDevice)
-                    return;
-            }
-            catch
-            {
-            }
+            if (IsLowMemDevice)
+                return;
 
             using (var context = new DataStoreContext())
             {

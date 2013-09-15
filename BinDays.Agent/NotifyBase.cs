@@ -5,7 +5,7 @@ namespace CMcG.BinDays
 {
     public class NotifyBase : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler  PropertyChanged  = delegate { };
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
         protected void FirePropertyChanged(params string[] propertyNames)
         {

@@ -25,5 +25,22 @@ namespace CMcG.BinDays
         {
             return Day.GetHashCode();
         }
+
+        public static DayOfWeekViewModel[] DayList
+        {
+            get
+            {
+                return new[]
+                {
+                    DayOfWeek.Sunday,
+                    DayOfWeek.Monday,
+                    DayOfWeek.Tuesday,
+                    DayOfWeek.Wednesday,
+                    DayOfWeek.Thursday,
+                    DayOfWeek.Friday,
+                    DayOfWeek.Saturday,
+                }.Select(x => new DayOfWeekViewModel(x)).ToArray();
+            }
+        }
     }
 }

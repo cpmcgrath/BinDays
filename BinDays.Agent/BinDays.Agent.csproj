@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="BinType.cs" />
     <Compile Include="DataStoreContext.cs" />
+    <Compile Include="DataStoreUpdater.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="LiveTileUpdater.cs" />
     <Compile Include="NotifyBase.cs" />

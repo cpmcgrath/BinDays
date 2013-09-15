@@ -22,19 +22,7 @@ namespace CMcG.BinDays
 
         public DayOfWeekViewModel[] DayList
         {
-            get
-            {
-                return new[]
-                {
-                    DayOfWeek.Sunday,
-                    DayOfWeek.Monday,
-                    DayOfWeek.Tuesday,
-                    DayOfWeek.Wednesday,
-                    DayOfWeek.Thursday,
-                    DayOfWeek.Friday,
-                    DayOfWeek.Saturday,
-                }.Select(x => new DayOfWeekViewModel(x)).ToArray();
-            }
+            get { return DayOfWeekViewModel.DayList; }
         }
 
         public DayOfWeekViewModel CollectionDay { get; set; }
