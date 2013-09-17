@@ -1,6 +1,8 @@
 ﻿using System.Windows;
 using Microsoft.Phone.Scheduler;
 using System.Diagnostics;
+using System.Windows.Controls;
+using System;
 
 namespace CMcG.BinDays.Agent
 {
@@ -14,9 +16,8 @@ namespace CMcG.BinDays.Agent
                 return;
 
             m_classInitialized = true;
-            
-            Deployment.Current.Dispatcher.BeginInvoke(
-                () => Application.Current.UnhandledException += GlobalUnhandledExceptionHandler);
+
+            RunOnDispatcher(() => Application.Current.UnhandledException += GlobalUnhandledExceptionHandler);
         }
 
         void GlobalUnhandledExceptionHandler(object sender, ApplicationUnhandledExceptionEventArgs e)
@@ -30,8 +31,16 @@ namespace CMcG.BinDays.Agent
 
         protected override void OnInvoke(ScheduledTask task)
         {
-            new LiveTileUpdater().UpdateTile();
-            NotifyComplete();
+            RunOnDispatcher(() =>
+            {
+                new LiveTileUpdater().UpdateTile();
+                NotifyComplete();
+            });
+        }
+
+        void RunOnDispatcher(Action action)
+        {
+            Deployment.Current.Dispatcher.BeginInvoke(action);
         }
     }
 }
