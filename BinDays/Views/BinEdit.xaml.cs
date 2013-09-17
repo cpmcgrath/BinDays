@@ -20,6 +20,9 @@ namespace CMcG.BinDays.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
+            if (e.NavigationMode != NavigationMode.New)
+                return;
+
             if (NavigationContext.QueryString.ContainsKey("id"))
                 DataContext = new BinEditVM(int.Parse(NavigationContext.QueryString["id"]));
             else
