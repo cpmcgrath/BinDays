@@ -84,6 +84,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Data\BinType.cs" />
+    <Compile Include="Data\CollectionDay.cs" />
     <Compile Include="Data\DataStoreContext.cs" />
     <Compile Include="Data\DataStoreUpdater.cs" />
     <Compile Include="Data\NotifyBase.cs" />
