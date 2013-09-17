@@ -40,5 +40,11 @@ namespace CMcG.BinDays.Business.LiveTiles
             get { return Recycling.Visibility == Visibility.Visible; }
             set { Recycling.Visibility = value ? Visibility.Visible : Visibility.Collapsed; }
         }
+
+        public bool HasGreen
+        {
+            get { return Green.Visibility == Visibility.Visible; }
+            set { Green.Visibility = value ? Visibility.Visible : Visibility.Collapsed; }
+        }
     }
 }

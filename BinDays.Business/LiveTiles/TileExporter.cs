@@ -11,6 +11,7 @@ namespace CMcG.BinDays.Business.LiveTiles
     {
         public bool IsGeneralWaste { get; set; }
         public bool IsRecycling    { get; set; }
+        public bool IsGreen        { get; set; }
 
         public DateTime Date { get; set; }
     }
@@ -23,7 +24,8 @@ namespace CMcG.BinDays.Business.LiveTiles
             {
                 Date           = day.Date,
                 IsGeneralWaste = day.Bins.Any(x => x.BinType == BinType.GeneralWaste),
-                IsRecycling    = day.Bins.Any(x => x.BinType == BinType.Recycling)
+                IsRecycling    = day.Bins.Any(x => x.BinType == BinType.Recycling),
+                IsGreen        = day.Bins.Any(x => x.BinType == BinType.Green)
             };
             ExportSmall(data);
             ExportStandard(data);
@@ -56,10 +58,11 @@ namespace CMcG.BinDays.Business.LiveTiles
         {
             var tile = new Wide
             {
-                ActualDate = data.Date.ToRelativeString().ToUpper(),
-                ActualDay  = data.Date.DayOfWeek.ToString().ToUpper(),
-                HasGeneral = data.IsGeneralWaste,
+                ActualDate  = data.Date.ToRelativeString().ToUpper(),
+                ActualDay   = data.Date.DayOfWeek.ToString().ToUpper(),
+                HasGeneral  = data.IsGeneralWaste,
                 HasRecycling = data.IsRecycling,
+                HasGreen     = data.IsGreen,
             };
             Export(tile, 691, 336, "/Shared/ShellContent/WideTile.jpg");
         }
