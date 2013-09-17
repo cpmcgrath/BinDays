@@ -20,7 +20,9 @@ namespace CMcG.BinDays.Views
 
         void Save(object sender, EventArgs e)
         {
+            this.FinishBinding();
             ((BinEditVM)DataContext).Save();
+            NavigationService.GoBack();
         }
     }
 }

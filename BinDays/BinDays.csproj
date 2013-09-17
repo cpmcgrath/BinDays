@@ -119,6 +119,7 @@
     </Compile>
     <Compile Include="Old\MainViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UIExtensions.cs" />
     <Compile Include="ViewModels\BinEditVM.cs" />
     <Compile Include="ViewModels\RubbishBinVM.cs" />
     <Compile Include="ViewModels\DayVM.cs" />

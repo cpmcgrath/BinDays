@@ -8,6 +8,11 @@ namespace CMcG.BinDays
         public ViewMain()
         {
             InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
             DataContext = new MainVM();
         }
 

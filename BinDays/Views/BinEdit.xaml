@@ -63,10 +63,10 @@
             </tk:ListPicker>
 
             <TextBlock Text="Next collection is on" Foreground="#7A7A7A" />
-            <tk:DatePicker Value="{Binding OriginDate}" />
+            <tk:DatePicker Value="{Binding OriginDate, Mode=TwoWay}" />
 
             <TextBlock Text="Weeks between collections" Foreground="#7A7A7A" />
-            <TextBox Text="{Binding WeekInterval}" />
+            <TextBox Text="{Binding WeekInterval, Mode=TwoWay}" InputScope="Number" />
 
         </StackPanel>
     </Grid>
