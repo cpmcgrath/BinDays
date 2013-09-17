@@ -30,12 +30,12 @@ namespace CMcG.BinDays
 
             using (var context = new DataStoreContext())
             {
-                var bins = context.NextBinDay;
+                var day = context.NextCollectionDay;
 
-                if (!bins.Any())
+                if (!day.Bins.Any())
                     return;
 
-                new TileExporter().Export(bins);
+                new TileExporter().Export(day);
 
                 var tile  = ShellTile.ActiveTiles.First();
                 tile.Update(new FlipTileData

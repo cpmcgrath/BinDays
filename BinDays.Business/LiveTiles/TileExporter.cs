@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO.IsolatedStorage;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -13,21 +10,20 @@ namespace CMcG.BinDays.Business.LiveTiles
     public class TileData
     {
         public bool IsGeneralWaste { get; set; }
-        public bool IsRecycling { get; set; }
+        public bool IsRecycling    { get; set; }
 
         public DateTime Date { get; set; }
     }
 
     public class TileExporter
     {
-        public void Export(RubbishBin[] bins)
+        public void Export(CollectionDay day)
         {
-            var date = bins.First().NextCollectionDate;
             var data = new TileData
             {
-                Date = bins.First().NextCollectionDate,
-                IsGeneralWaste = bins.Any(x => x.BinType == BinType.GeneralWaste),
-                IsRecycling    = bins.Any(x => x.BinType == BinType.Recycling)
+                Date           = day.Date,
+                IsGeneralWaste = day.Bins.Any(x => x.BinType == BinType.GeneralWaste),
+                IsRecycling    = day.Bins.Any(x => x.BinType == BinType.Recycling)
             };
             ExportSmall(data);
             ExportStandard(data);
@@ -38,8 +34,8 @@ namespace CMcG.BinDays.Business.LiveTiles
         {
             var tile = new Small
             {
-                ActualDay = data.Date.DayOfWeek.ToString().Substring(0, 3).ToUpper(),
-                HasGeneral = data.IsGeneralWaste,
+                ActualDay    = data.Date.DayOfWeek.ToString().Substring(0, 3).ToUpper(),
+                HasGeneral   = data.IsGeneralWaste,
                 HasRecycling = data.IsRecycling,
             };
             Export(tile, 159, 159, "/Shared/ShellContent/SmallTile.jpg");
@@ -49,8 +45,8 @@ namespace CMcG.BinDays.Business.LiveTiles
         {
             var tile = new Standard
             {
-                ActualDay = data.Date.DayOfWeek.ToRelativeString().ToUpper(),
-                HasGeneral = data.IsGeneralWaste,
+                ActualDay    = data.Date.DayOfWeek.ToRelativeString().ToUpper(),
+                HasGeneral   = data.IsGeneralWaste,
                 HasRecycling = data.IsRecycling,
             };
             Export(tile, 336, 336, "/Shared/ShellContent/StandardTile.jpg");
@@ -83,6 +79,5 @@ namespace CMcG.BinDays.Business.LiveTiles
                 bmp.SaveJpeg(stream, width, height, 0, 100);
             }
         }
-
     }
 }

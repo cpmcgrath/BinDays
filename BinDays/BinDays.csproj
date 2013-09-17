@@ -113,13 +113,20 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppStatus.cs" />
-    <Compile Include="DayOfWeekViewModel.cs" />
-    <Compile Include="MainPage.xaml.cs">
+    <Compile Include="Old\DayOfWeekViewModel.cs" />
+    <Compile Include="Old\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainViewModel.cs" />
+    <Compile Include="Old\MainViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewMain.xaml.cs">
+    <Compile Include="ViewModels\BinEditVM.cs" />
+    <Compile Include="ViewModels\RubbishBinVM.cs" />
+    <Compile Include="ViewModels\DayVM.cs" />
+    <Compile Include="ViewModels\MainVM.cs" />
+    <Compile Include="Views\BinEdit.xaml.cs">
+      <DependentUpon>BinEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewMain.xaml.cs">
       <DependentUpon>ViewMain.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -128,11 +135,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="MainPage.xaml">
+    <Page Include="Old\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewMain.xaml">
+    <Page Include="Views\BinEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

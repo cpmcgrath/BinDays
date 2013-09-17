@@ -20,20 +20,40 @@
                                  Text="{Binding Status.Action}" />
     </shell:SystemTray.ProgressIndicator>
 
-    <Grid Background="Transparent">
+    <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="1,0.5" StartPoint="0.5,0">
+                <GradientStop Color="#ECECEC" Offset="0"/>
+                <GradientStop Color="#DEDEE0" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
 
-        <StackPanel Margin="12,17,0,28">
-            <TextBlock Text="" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="bin days" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        <Grid HorizontalAlignment="Stretch" Grid.Row="0">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0.5,0">
+                    <GradientStop Color="#79C443" Offset="0"/>
+                    <GradientStop Color="#A3FE5B" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Margin="20,0" FontSize="40" FontFamily="Segoe WP Light"
+                       Foreground="White">
+                <Run Text="BIN" FontWeight="Bold" />
+                <Run Text="DAYS" />
+            </TextBlock>
+        </Grid>
+
+        <StackPanel Margin="12,0,0,28" Grid.Row="1">
+            <TextBlock Text="SETUP" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#7A7A7A"/>
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock Text="Bins will be collected next" />
+        <StackPanel Grid.Row="2" Margin="12,0,12,0">
+            <TextBlock Text="Bins will be collected next" Foreground="#7A7A7A" />
             <tk:ListPicker ItemsSource="{Binding DayList}" SelectedItem="{Binding CollectionDay, Mode=TwoWay}">
                 <tk:ListPicker.FullModeItemTemplate>
                     <DataTemplate>
@@ -41,13 +61,13 @@
                     </DataTemplate>
                 </tk:ListPicker.FullModeItemTemplate>
             </tk:ListPicker>
-            <CheckBox Content="This is a recycling week" IsChecked="{Binding IsRecycling, Mode=TwoWay}" />
+            <CheckBox Foreground="#7A7A7A" Content="This is a recycling week" IsChecked="{Binding IsRecycling, Mode=TwoWay}" BorderBrush="#7A7A7A" />
         </StackPanel>
-        <my:AdControl Grid.Row="2" AdUnitId="106023" ApplicationId="2488d6ec-e5f4-4dc3-98a1-89aab77f9a99" Height="80" HorizontalAlignment="Left" Name="adControl1" VerticalAlignment="Top" Width="480" />
+        <my:AdControl Grid.Row="3" AdUnitId="106023" ApplicationId="2488d6ec-e5f4-4dc3-98a1-89aab77f9a99" Height="80" HorizontalAlignment="Left" Name="adControl1" VerticalAlignment="Top" Width="480" />
     </Grid>
  
     <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" BackgroundColor="#78C043" ForegroundColor="White">
             <shell:ApplicationBarIconButton IconUri="/Images/appbar.save.rest.png" Text="Save" Click="Save" />
             <shell:ApplicationBarIconButton IconUri="/Images/add.png" Text="New UI" Click="GoToNew" />
         </shell:ApplicationBar>

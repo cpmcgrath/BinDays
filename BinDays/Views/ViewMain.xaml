@@ -1,0 +1,126 @@
+﻿<phone:PhoneApplicationPage x:Class="CMcG.BinDays.ViewMain"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            mc:Ignorable="d"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="#7A7A7A"
+                            SupportedOrientations="Portrait"  Orientation="Portrait"
+                            shell:SystemTray.IsVisible="True">
+
+    <shell:SystemTray.ProgressIndicator>
+        <shell:ProgressIndicator IsIndeterminate="{Binding Status.IsBusy}"
+                                 IsVisible="True"
+                                 Text="{Binding Status.Action}" />
+    </shell:SystemTray.ProgressIndicator>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="59*"/>
+            <RowDefinition Height="637*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="1,0.5" StartPoint="0.5,0">
+                <GradientStop Color="#ECECEC" Offset="0"/>
+                <GradientStop Color="#DEDEE0" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid HorizontalAlignment="Stretch">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0.5,0">
+                    <GradientStop Color="#79C443" Offset="0"/>
+                    <GradientStop Color="#A3FE5B" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Margin="20,0" FontSize="40" FontFamily="Segoe WP Light"
+                       Foreground="White">
+                <Run Text="BIN" FontWeight="Bold" />
+                <Run Text="DAYS" />
+            </TextBlock>
+        </Grid>
+        
+        <phone:Pivot Foreground="#7A7A7A" Grid.Row="1" Margin="0,-20,0,0">
+            <phone:PivotItem Header="DAYS">
+                <Grid>
+                    <ListBox ItemsSource="{Binding Days}" Foreground="#7A7A7A">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Margin="20,0" FontSize="40" FontFamily="Segoe WP Light">
+                                        <Run Text="{Binding Weekday}" FontWeight="Bold" />
+                                        <Run Text="{Binding Date}" />
+                                    </TextBlock>
+                                    <ItemsControl ItemsSource="{Binding Bins}" Foreground="#7A7A7A">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Margin="10,0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="Auto" />
+                                                        <RowDefinition Height="Auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <TextBlock FontSize="50" FontFamily="Segoe UI Symbol"
+                                                              Text="{Binding Icon}" Grid.RowSpan="2" Foreground="#70C546" />
+                                                    <TextBlock FontSize="30" FontFamily="Segoe WP Light"
+                                                              Text="{Binding BinType}" FontWeight="Bold" Grid.Column="1" />
+                                                    <TextBlock FontSize="20" FontFamily="Segoe WP Light"
+                                                              Text="{Binding Data.Interval, StringFormat='{}Collected every {0} days'}"
+                                                               Grid.Column="1"
+                                                               Grid.Row   ="1" />
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="BINS">
+                <ItemsControl ItemsSource="{Binding Bins}" Foreground="#7A7A7A">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <TextBlock FontSize="50" FontFamily="Segoe UI Symbol"
+                                           Text="{Binding Icon}" Grid.RowSpan="3" Foreground="#70C546" />
+                                <TextBlock FontSize="30" FontFamily="Segoe WP Light"
+                                           Text="{Binding BinType}" FontWeight="Bold" Grid.Column="1" />
+                                <TextBlock FontSize="20" FontFamily="Segoe WP Light"
+                                           Text="{Binding Data.NextCollectionDate, StringFormat='{}Next collected on {0:dddd d MMM}'}"
+                                           Grid.Column="1"
+                                           Grid.Row   ="1" />
+                                <TextBlock FontSize="20" FontFamily="Segoe WP Light"
+                                           Text="{Binding Data.Interval, StringFormat='{}Collected every {0} days'}"
+                                           Grid.Column="1"
+                                           Grid.Row   ="2" />
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </phone:PivotItem>
+        </phone:Pivot>
+    </Grid>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" BackgroundColor="#78C043" ForegroundColor="White">
+            <shell:ApplicationBarIconButton IconUri="/Images/add.png" Text="add" Click="OnAdd"  />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

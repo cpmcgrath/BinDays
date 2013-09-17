@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Data.Linq;
 using Microsoft.Phone.Data.Linq;
+using System.Collections.Generic;
 
 namespace CMcG.BinDays
 {
@@ -29,16 +30,28 @@ namespace CMcG.BinDays
             get { return Setup.FirstOrDefault() ?? new Setup(); }
         }
 
-        public RubbishBin[] NextBinDay
+        public CollectionDay NextCollectionDay
+        {
+            get { return CollectionDays.FirstOrDefault() ?? new CollectionDay(); }
+        }
+
+        public IEnumerable<CollectionDay> CollectionDays
         {
             get
             {
                 if (!RubbishBins.Any())
-                    return new RubbishBin[0];
+                    yield break;
 
-                var nextDay = RubbishBins.ToArray().Min(y => y.NextCollectionDate);
-                return RubbishBins.ToArray().Where(x => x.NextCollectionDate == nextDay).ToArray();
+                var origin = DateTime.Today;
+                for (int i = 0; i < 10; i++)
+                {
+                    var nextDay = RubbishBins.ToArray().Min(y => y.NextAfter(origin));
+                    var bins = RubbishBins.ToArray().Where(x => x.NextAfter(origin) == nextDay).ToArray();
+                    yield return new CollectionDay { Date = nextDay, Bins = bins };
+                    origin = nextDay.AddDays(1);
+                }
             }
         }
+
     }
 }

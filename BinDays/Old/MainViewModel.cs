@@ -12,12 +12,12 @@ namespace CMcG.BinDays
             CollectionDay = new DayOfWeekViewModel(DateTime.Today.DayOfWeek);
             using (var context = new DataStoreContext())
             {
-                var bins = context.NextBinDay;
-                if (!bins.Any())
+                var day = context.NextCollectionDay;
+                if (!day.Bins.Any())
                     return;
 
-                CollectionDay = new DayOfWeekViewModel(bins.First().NextCollectionDate.DayOfWeek);
-                IsRecycling   = bins.Any(x => x.BinType == BinType.Recycling);
+                CollectionDay = new DayOfWeekViewModel(day.Date.DayOfWeek);
+                IsRecycling   = day.Bins.Any(x => x.BinType == BinType.Recycling);
             }
         }
 

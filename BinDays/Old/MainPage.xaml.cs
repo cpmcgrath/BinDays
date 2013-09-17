@@ -21,7 +21,7 @@ namespace CMcG.BinDays
 
         void GoToNew(object sender, EventArgs e)
         {
-            NavigationService.Navigate(new Uri("/ViewMain.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Views/ViewMain.xaml", UriKind.Relative));
         }
     }
 }
