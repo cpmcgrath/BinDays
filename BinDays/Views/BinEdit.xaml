@@ -49,7 +49,7 @@
         </Grid>
 
         <StackPanel Margin="12,0,0,28" Grid.Row="1">
-            <TextBlock Text="NEW" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#7A7A7A"/>
+            <TextBlock Text="{Binding EditType}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#7A7A7A"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Margin="12,0,12,0">
@@ -74,6 +74,7 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" BackgroundColor="#78C043" ForegroundColor="White">
             <shell:ApplicationBarIconButton IconUri="/Images/appbar.save.rest.png" Text="Save" Click="Save" />
+            <shell:ApplicationBarIconButton IconUri="/Toolkit.Content/ApplicationBar.Delete.png" Text="Delete" Click="Delete"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 
