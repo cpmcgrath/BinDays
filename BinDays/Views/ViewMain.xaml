@@ -5,6 +5,7 @@
                             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:local="clr-namespace:CMcG.BinDays"
                             mc:Ignorable="d"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
                             FontSize="{StaticResource PhoneFontSizeNormal}"
@@ -54,30 +55,8 @@
                                         <Run Text="{Binding Weekday}" FontWeight="Bold" />
                                         <Run Text="{Binding Date}" />
                                     </TextBlock>
-                                    <ItemsControl ItemsSource="{Binding Bins}" Foreground="#7A7A7A">
-                                        <ItemsControl.ItemTemplate>
-                                            <DataTemplate>
-                                                <Grid Margin="10,0">
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="Auto" />
-                                                        <ColumnDefinition Width="Auto" />
-                                                    </Grid.ColumnDefinitions>
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition Height="Auto" />
-                                                        <RowDefinition Height="Auto" />
-                                                    </Grid.RowDefinitions>
-                                                    <TextBlock FontSize="50" FontFamily="Segoe UI Symbol"
-                                                              Text="{Binding Icon}" Grid.RowSpan="2" Foreground="#70C546" />
-                                                    <TextBlock FontSize="30" FontFamily="Segoe WP Light"
-                                                              Text="{Binding BinType}" FontWeight="Bold" Grid.Column="1" />
-                                                    <TextBlock FontSize="20" FontFamily="Segoe WP Light"
-                                                              Text="{Binding Data.Interval, StringFormat='{}Collected every {0} days'}"
-                                                               Grid.Column="1"
-                                                               Grid.Row   ="1" />
-                                                </Grid>
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-                                    </ItemsControl>
+                                    <ItemsControl ItemsSource="{Binding Bins}" Foreground="#7A7A7A"
+                                                  ItemTemplate="{StaticResource RubbishBinVMStyle}" />
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>
