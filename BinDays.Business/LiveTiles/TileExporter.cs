@@ -39,6 +39,7 @@ namespace CMcG.BinDays.Business.LiveTiles
                 ActualDay    = data.Date.DayOfWeek.ToString().Substring(0, 3).ToUpper(),
                 HasGeneral   = data.IsGeneralWaste,
                 HasRecycling = data.IsRecycling,
+                IsBold       = data.Date == DateTime.Today || data.Date == DateTime.Today.AddDays(1)
             };
             Export(tile, 159, 159, "/Shared/ShellContent/SmallTile.jpg");
         }
