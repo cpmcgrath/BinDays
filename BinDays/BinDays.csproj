@@ -86,8 +86,14 @@
     <Compile Include="Views\BinEdit.xaml.cs">
       <DependentUpon>BinEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ViewGoPro.xaml.cs">
+      <DependentUpon>ViewGoPro.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ViewMain.xaml.cs">
       <DependentUpon>ViewMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ViewRateApp.xaml.cs">
+      <DependentUpon>ViewRateApp.xaml</DependentUpon>
     </Compile>
     <Compile Include="VisibleConverter.cs" />
   </ItemGroup>
@@ -100,7 +106,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ViewGoPro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ViewMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewRateApp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

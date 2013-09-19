@@ -18,5 +18,10 @@ namespace CMcG.BinDays
 
         public DayVM[]        Days { get; set; }
         public RubbishBinVM[] Bins { get; set; }
+
+        public bool IsTrial
+        {
+            get { return LicenseInformation.IsTrial; }
+        }
     }
 }

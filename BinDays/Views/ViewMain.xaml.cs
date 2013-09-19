@@ -1,4 +1,5 @@
 ﻿using Microsoft.Phone.Controls;
+using Microsoft.Phone.Tasks;
 using System;
 using System.Windows;
 
@@ -26,6 +27,16 @@ namespace CMcG.BinDays
         {
             var context = (RubbishBinVM)((FrameworkElement)sender).DataContext;
             NavigationService.Navigate(new Uri("/Views/BinEdit.xaml?id=" + context.Data.Id, UriKind.Relative));
+        }
+
+        void OnGoPro(object sender, System.Windows.RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Views/ViewGoPro.xaml", UriKind.Relative));
+        }
+
+        void OnRateApp(object sender, EventArgs e)
+        {
+            new MarketplaceReviewTask().Show();
         }
     }
 }
