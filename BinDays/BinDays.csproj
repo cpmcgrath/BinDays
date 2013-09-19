@@ -22,7 +22,7 @@
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
-    <XapFilename>BinDays_$(Configuration)_$(Platform).xap</XapFilename>
+    <XapFilename>BinDays_Free.xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
     <SilverlightAppEntry>CMcG.BinDays.App</SilverlightAppEntry>
     <ValidateXaml>true</ValidateXaml>
@@ -108,7 +108,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Properties\AppManifest.xml" />
-    <None Include="Properties\WMAppManifest.xml">
+    <None Include="Properties\WMAppManifestPro.xml">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -119,6 +119,9 @@
     <Content Include="Images\Icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\WMAppManifestFree.xml">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
@@ -145,4 +148,9 @@
   -->
   <ProjectExtensions />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if "$(ConfigurationName)"=="Pro Release" copy "$(ProjectDir)Properties\WMAppManifestPro.xml" "$(ProjectDir)Properties\WMAppManifest.xml"
+if "$(ConfigurationName)"==Debug copy "$(ProjectDir)Properties\WMAppManifestPro.xml" "$(ProjectDir)Properties\WMAppManifest.xml"
+if "$(ConfigurationName)"=="Free Release" copy "$(ProjectDir)Properties\WMAppManifestFree.xml" "$(ProjectDir)Properties\WMAppManifest.xml"</PreBuildEvent>
+  </PropertyGroup>
 </Project>
