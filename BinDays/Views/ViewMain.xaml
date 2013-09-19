@@ -21,8 +21,8 @@
 
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
-            <RowDefinition Height="59*"/>
-            <RowDefinition Height="637*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="1,0.5" StartPoint="0.5,0">
@@ -43,7 +43,7 @@
                 <Run Text="DAYS" />
             </TextBlock>
         </Grid>
-        
+
         <phone:Pivot Foreground="#7A7A7A" Grid.Row="1" Margin="0,-20,0,0">
             <phone:PivotItem Header="DAYS">
                 <Grid>

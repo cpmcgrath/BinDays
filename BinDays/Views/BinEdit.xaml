@@ -22,7 +22,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
@@ -34,7 +34,7 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <Grid HorizontalAlignment="Stretch" Grid.Row="0">
+        <Grid HorizontalAlignment="Stretch">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="1,0.5" StartPoint="0.5,0">
                     <GradientStop Color="#79C443" Offset="0"/>
@@ -49,7 +49,9 @@
         </Grid>
 
         <StackPanel Margin="12,0,0,28" Grid.Row="1">
-            <TextBlock Text="{Binding EditType}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#7A7A7A"/>
+            <TextBlock Text="{Binding EditType, FallbackValue=NEW}"
+                       Margin="9,-7,0,0"
+                       Style="{StaticResource PhoneTextTitle1Style}" Foreground="#7A7A7A"/>
         </StackPanel>
 
         <StackPanel Grid.Row="2" Margin="12,0,12,0">
