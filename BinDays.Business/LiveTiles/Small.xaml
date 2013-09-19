@@ -30,7 +30,7 @@
                    Name="lblActualDay"
                    Text="WED" HorizontalAlignment="Center" FontFamily="Segoe WP Light" FontSize="48" />
 
-        <Grid Background="#FF77C043" Grid.RowSpan="2" Visibility="Collapsed">
+        <Grid Name="Advertisement"  Background="#FF77C043" Grid.RowSpan="2" Visibility="Collapsed">
             <TextBlock FontFamily="Segoe WP Semibold" FontSize="48" TextAlignment="Center" VerticalAlignment="Center" Margin="0,-20,0,0">
                 GO<LineBreak/>PRO
             </TextBlock>

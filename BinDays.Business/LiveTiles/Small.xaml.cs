@@ -35,6 +35,12 @@ namespace CMcG.BinDays.Business.LiveTiles
             set { Recycling.Visibility = value ? Visibility.Visible : Visibility.Collapsed; }
         }
 
+        public bool IsAdvertisement
+        {
+            get { return Advertisement.Visibility == Visibility.Visible; }
+            set { Advertisement.Visibility = value ? Visibility.Visible : Visibility.Collapsed; }
+        }
+
         public bool IsBold
         {
             get { return lblActualDay.FontWeight == FontWeights.Bold; }

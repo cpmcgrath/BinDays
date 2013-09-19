@@ -59,6 +59,7 @@
     <Compile Include="Data\RubbishBin.cs" />
     <Compile Include="Data\Setup.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="LicenseInformation.cs" />
     <Compile Include="LiveTiles\Small.xaml.cs">
       <DependentUpon>Small.xaml</DependentUpon>
       <SubType>Code</SubType>
