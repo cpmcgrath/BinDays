@@ -17,7 +17,11 @@
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.Background>
@@ -40,28 +44,34 @@
             </TextBlock>
         </Grid>
 
-
-        <StackPanel Margin="12,0,0,28" Grid.Row="1" VerticalAlignment="Top">
-            <TextBlock Text="GO PRO"
-                       Margin="9,-7,0,0"
-                       Style="{StaticResource PhoneTextTitle1Style}" Foreground="#7A7A7A"/>
+        <StackPanel Margin="12,0" Grid.Row="1" VerticalAlignment="Top">
+            <TextBlock Margin="9,-7,0,0"
+                       Style="{StaticResource PhoneTextTitle1Style}" Foreground="#7A7A7A">
+                GO <Run FontWeight="Bold">PRO</Run>
+            </TextBlock>
         </StackPanel>
-        <TextBlock Text="Get the small live tile!" Grid.Row="1" Margin="26,112,0,0" FontFamily="Segoe WP Semibold" FontSize="30" Height="52" VerticalAlignment="Top" HorizontalAlignment="Left" Width="320" />
-        <TextBlock Margin="26,313,0,0" FontFamily="Segoe WP Semibold" FontSize="30" Height="37" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="203" >
-            It's cheap!
-        </TextBlock>
-        <LiveTiles:Small Margin="26,149,0,0" Grid.Row="1"
-                         VerticalAlignment="Top" HorizontalAlignment="Left" Height="159" Width="159" />
-        <TextBlock Margin="26,350,0,0" FontFamily="Segoe WP Semibold" FontSize="30" Height="37" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="365" >
-            Support Quality Software
+        <TextBlock Text="and get the small live tile..." Grid.Row="2" Margin="26,0,0,0" FontFamily="Segoe WP Semibold" FontSize="30" Height="52" VerticalAlignment="Top" HorizontalAlignment="Left" Width="376" />
+        <LiveTiles:Small Grid.Row="3"
+                         HorizontalAlignment="Left"
+                         Height="159" Width="159" Margin="26,0" >
+            <LiveTiles:Small.Projection>
+                <PlaneProjection RotationX="10"/>
+            </LiveTiles:Small.Projection>
+        </LiveTiles:Small>
+
+        <TextBlock FontFamily="Segoe WP Semibold" FontSize="30" Grid.Row="4" TextWrapping="Wrap"
+                   Margin="26,0">
+            Show your Support for Quality Software by purchasing <Run FontWeight="Bold">BIN</Run>DAYS at a Great Price.
         </TextBlock>
 
-        <Button Grid.Row="2" Style="{StaticResource CleanBtn}"
+        <Button Background="#FFB8B8B8" Foreground="White"  Click="NotNow" Style="{StaticResource CleanBtn}"
+                    HorizontalAlignment="Stretch" Padding="10" Margin="12,193,12,137" Grid.Column="0" Grid.Row="4" Grid.RowSpan="3">
+            Remind me later
+        </Button>
+        <Button Grid.Row="6" Style="{StaticResource CleanBtn}"
                 Foreground="#7A7A7A" HorizontalAlignment="Center"
-                Click="GoToStore">
-            <TextBlock FontSize="30" FontWeight="Bold"
-                       Text="Click here to Buy!"
-                       FontFamily="Segoe WP Light" />
+                Click="GoToStore" Margin="0,0">
+            <Image Source="/Images/462x120_WPS_Download_gry.png" />
         </Button>
     </Grid>
 

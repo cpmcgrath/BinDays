@@ -17,6 +17,7 @@ namespace CMcG.BinDays.Views
         public ViewRateApp()
         {
             InitializeComponent();
+            DataContext = new MainVM();
         }
 
         void NotNow(object sender, RoutedEventArgs e)

@@ -44,29 +44,43 @@
                        Margin="9,-7,0,0"
                        Style="{StaticResource PhoneTextTitle1Style}" Foreground="#7A7A7A"/>
         </StackPanel>
-        <TextBlock Grid.Row="1" Margin="23,112,30,0" FontFamily="Segoe WP Semibold" FontSize="24" VerticalAlignment="Top"
+        <TextBlock Grid.Row="1" Margin="23,90,30,0" FontSize="24" VerticalAlignment="Top"
                    TextWrapping="Wrap">
-            Developers like myself spend a lot of time developing apps.
-            <LineBreak />With hundreds of thousands of apps in the marketplace it
-            can be hard to get people to notice it.
-            <LineBreak />Rating your favourite apps is the easiest way to support
-            developers of your favourite apps.
+            <Run>Developers like myself spend a lot of time developing apps.</Run>
             <LineBreak />
-            <LineBreak /> If you use Bin Days and enjoy the app then please rate it.
+            <Run>With hundreds of thousands of apps in the marketplace it</Run>
+            can be hard to get people to notice it.
+            <LineBreak />
+            <Run FontFamily="Segoe WP Semibold">Rating your favourite apps is the easiest way to support
+            developers of your favourite apps.</Run>
+            <LineBreak />
+            <LineBreak />If you use <Run FontWeight="Bold">BIN</Run>DAYS and enjoy the app then please rate it.
             A five star review will help the app enormously.
         </TextBlock>
 
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="2">
-            <Button  Foreground="#7A7A7A" Click="RateApp">
-                <TextBlock Text="Review" />
+        <Grid   Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Background="#FFB8B8B8" Foreground="White"  Click="NotNow" Style="{StaticResource CleanBtn}"
+                    HorizontalAlignment="Stretch" Padding="10" Margin="-8" Grid.Column="0" Grid.Row="0">
+                Remind me later
             </Button>
-            <Button  Foreground="#7A7A7A" Click="NotNow">
-                <TextBlock Text="Remind me later" />
+            <Button  Background="#FFB8B8B8" Foreground="White" Click="DontAskAgain" Style="{StaticResource CleanBtn}"
+                    HorizontalAlignment="Stretch" Padding="10" Margin="-8" Grid.Column="0" Grid.Row="1"
+                    Visibility="{Binding IsTrial, Converter={StaticResource InvertVisibleConvert}}">
+                Don't ask again
             </Button>
-            <Button  Foreground="#7A7A7A" Click="DontAskAgain">
-                <TextBlock Text="Don't ask again" />
+            <Button Background="#78C043" Foreground="White" Click="RateApp" Style="{StaticResource CleanBtn}"
+                    HorizontalAlignment="Stretch" Padding="10" Margin="-8" Grid.Column="1" Grid.RowSpan="2">
+                Review
             </Button>
-        </StackPanel>
+        </Grid>
     </Grid>
 
 </phone:PhoneApplicationPage>

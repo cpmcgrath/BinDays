@@ -11,9 +11,15 @@ namespace CMcG.BinDays.Views
             InitializeComponent();
         }
 
-        private void GoToStore(object sender, RoutedEventArgs e)
+        void GoToStore(object sender, RoutedEventArgs e)
         {
             new MarketplaceDetailTask { ContentIdentifier = "" }.Show();
+            NavigationService.GoBack();
+        }
+
+        private void NotNow(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
         }
     }
 }
