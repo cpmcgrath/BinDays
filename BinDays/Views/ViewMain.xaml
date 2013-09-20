@@ -121,7 +121,7 @@
         <Button Grid.Row="2" Style="{StaticResource CleanBtn}"
                 Foreground="#7A7A7A" Padding="0" HorizontalAlignment="Center"
                 Visibility="{Binding IsTrial, Converter={StaticResource VisibleConvert}}"
-                Click="OnGoPro">
+                Click="GoPro">
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -149,8 +149,8 @@
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" BackgroundColor="#78C043" ForegroundColor="White">
             <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="rate app" Click="OnRateApp"/>
-                <shell:ApplicationBarMenuItem Text="about" Click="OnRateApp"/>
+                <shell:ApplicationBarMenuItem Text="rate app" Click="RateApp"/>
+                <shell:ApplicationBarMenuItem Text="about" Click="ShowAbout"/>
             </shell:ApplicationBar.MenuItems>
             <shell:ApplicationBarIconButton IconUri="/Images/add.png" Text="add" Click="OnAdd"  />
         </shell:ApplicationBar>

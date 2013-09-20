@@ -6,6 +6,7 @@ using Microsoft.Phone.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Scheduler;
 using Microsoft.Phone.Info;
+using System.IO.IsolatedStorage;
 
 namespace CMcG.BinDays
 {
@@ -23,6 +24,20 @@ namespace CMcG.BinDays
             InitializeComponent();
             InitializePhoneApplication();
 
+            if (!IsolatedStorageSettings.ApplicationSettings.Contains("HasReviewed"))
+                IsolatedStorageSettings.ApplicationSettings["HasReviewed"] = false;
+
+            if (!IsolatedStorageSettings.ApplicationSettings.Contains("StartCount"))
+                IsolatedStorageSettings.ApplicationSettings["StartCount"] = 0;
+
+            int count = (int)IsolatedStorageSettings.ApplicationSettings["StartCount"];
+            IsolatedStorageSettings.ApplicationSettings["StartCount"] = ++count;
+
+            bool hasRated = (bool)IsolatedStorageSettings.ApplicationSettings["HasReviewed"];
+            ShowRateApp  = !hasRated && (count > 3 && count % 4 == 0);
+            ShowGoPro = LicenseInformation.IsTrial && (count > 3 && count % 4 == 2);
+
+
             if (System.Diagnostics.Debugger.IsAttached)
                 ShowGraphicsProfiling();
             StartBackgroundAgent();
@@ -39,6 +54,9 @@ namespace CMcG.BinDays
             // Shows areas of a page that are handed off to GPU with a colored overlay.
             //Current.Host.Settings.EnableCacheVisualization = true;
         }
+
+        public bool ShowRateApp { get; set; }
+        public bool ShowGoPro   { get; set; }
 
         void OnInitialLaunch(object sender, LaunchingEventArgs e)
         {

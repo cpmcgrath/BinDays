@@ -16,6 +16,18 @@ namespace CMcG.BinDays
         {
             base.OnNavigatedTo(e);
             DataContext = new MainVM();
+
+            if (App.Current.ShowRateApp)
+            {
+                NavigationService.Navigate(new Uri("/Views/ViewRateApp.xaml", UriKind.Relative));
+                App.Current.ShowRateApp = false;
+            }
+
+            if (App.Current.ShowGoPro)
+            {
+                GoPro(null, null);
+                App.Current.ShowGoPro = false;
+            }
         }
 
         void OnAdd(object sender, EventArgs e)
@@ -29,14 +41,19 @@ namespace CMcG.BinDays
             NavigationService.Navigate(new Uri("/Views/BinEdit.xaml?id=" + context.Data.Id, UriKind.Relative));
         }
 
-        void OnGoPro(object sender, System.Windows.RoutedEventArgs e)
+        void GoPro(object sender, System.Windows.RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Views/ViewGoPro.xaml", UriKind.Relative));
         }
 
-        void OnRateApp(object sender, EventArgs e)
+        void RateApp(object sender, EventArgs e)
         {
             new MarketplaceReviewTask().Show();
+        }
+
+        void ShowAbout(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Views/ViewAbout.xaml", UriKind.Relative));
         }
     }
 }

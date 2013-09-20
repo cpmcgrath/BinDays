@@ -66,6 +66,7 @@
         </Style>
 
         <local:VisibleConverter x:Key="VisibleConvert" />
+        <local:VisibleConverter x:Key="InvertVisibleConvert" Invert="True" />
         <DataTemplate x:Key="RubbishBinVMStyle">
             <Grid Margin="20,0">
                 <Grid.ColumnDefinitions>
