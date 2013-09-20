@@ -1,0 +1,50 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="CMcG.BinDays.Views.ViewAbout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="#7A7A7A"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="1,0.5" StartPoint="0.5,0">
+                <GradientStop Color="#ECECEC" Offset="0"/>
+                <GradientStop Color="#DEDEE0" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid HorizontalAlignment="Stretch">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0.5,0">
+                    <GradientStop Color="#79C443" Offset="0"/>
+                    <GradientStop Color="#A3FE5B" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock Margin="20,0" FontSize="40" FontFamily="Segoe WP Light"
+                       Foreground="White">
+                <Run Text="BIN" FontWeight="Bold" />
+                <Run Text="DAYS" />
+            </TextBlock>
+        </Grid>
+
+        <StackPanel Margin="12,0,0,28" Grid.Row="1" VerticalAlignment="Top">
+            <TextBlock Text="ABOUT"
+                       Margin="9,-7,0,0"
+                       Style="{StaticResource PhoneTextTitle1Style}" Foreground="#7A7A7A"/>
+        </StackPanel>
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

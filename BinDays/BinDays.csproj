@@ -86,6 +86,9 @@
     <Compile Include="Views\BinEdit.xaml.cs">
       <DependentUpon>BinEdit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ViewAbout.xaml.cs">
+      <DependentUpon>ViewAbout.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ViewGoPro.xaml.cs">
       <DependentUpon>ViewGoPro.xaml</DependentUpon>
     </Compile>
@@ -103,6 +106,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Page Include="Views\BinEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ViewAbout.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\300px.png" />
+    <Content Include="Images\462x120_WPS_Download_gry.png" />
     <Content Include="Images\add.png" />
     <Content Include="Images\appbar.save.rest.png" />
     <Content Include="Images\Icon.png">
@@ -136,6 +144,7 @@
     <None Include="Properties\WMAppManifestFree.xml">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Properties\WMAppManifest.xml" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
