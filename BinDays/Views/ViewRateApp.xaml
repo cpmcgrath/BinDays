@@ -35,8 +35,7 @@
             </Grid.Background>
             <TextBlock Margin="20,0" FontSize="40" FontFamily="Segoe WP Light"
                        Foreground="White">
-                <Run Text="BIN" FontWeight="Bold" />
-                <Run Text="DAYS" />
+                <Run Text="BIN" FontWeight="Bold" /><Run Text="DAYS" />
             </TextBlock>
         </Grid>
 

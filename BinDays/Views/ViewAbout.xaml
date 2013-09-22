@@ -34,8 +34,7 @@
             </Grid.Background>
             <TextBlock Margin="20,0" FontSize="40" FontFamily="Segoe WP Light"
                        Foreground="White">
-                <Run Text="BIN" FontWeight="Bold" />
-                <Run Text="DAYS" />
+                <Run Text="BIN" FontWeight="Bold" /><Run Text="DAYS" />
             </TextBlock>
         </Grid>
 
@@ -44,6 +43,15 @@
                        Margin="9,-7,0,0"
                        Style="{StaticResource PhoneTextTitle1Style}" Foreground="#7A7A7A"/>
         </StackPanel>
+        <TextBlock Grid.Row="1" Margin="23,90,30,0" FontSize="24" VerticalAlignment="Top"
+                   TextWrapping="Wrap">
+            Version 4.0
+        </TextBlock>
+
+        <TextBlock Grid.Row="1" Margin="23,137,30,0" FontSize="24" VerticalAlignment="Top"
+                   TextWrapping="Wrap">
+            <Run FontWeight="Bold">BIN</Run>DAYS is Developed by Chris McGrath. The User Interface was designed by Martin Krestan.
+        </TextBlock>
 
     </Grid>
 
