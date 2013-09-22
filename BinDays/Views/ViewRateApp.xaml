@@ -16,6 +16,7 @@
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
@@ -47,18 +48,18 @@
         <TextBlock Grid.Row="1" Margin="23,90,30,0" FontSize="24" VerticalAlignment="Top"
                    TextWrapping="Wrap">
             <Run>Developers like myself spend a lot of time developing apps.</Run>
+            <LineBreak />With hundreds of thousands of apps in the marketplace,
+            it can be hard to get people to notice it.
             <LineBreak />
-            <Run>With hundreds of thousands of apps in the marketplace it</Run>
-            can be hard to get people to notice it.
-            <LineBreak />
-            <Run FontFamily="Segoe WP Semibold">Rating your favourite apps is the easiest way to support
+            <Run FontFamily="Segoe WP Semibold">Ratings are the best way to support
             developers of your favourite apps.</Run>
             <LineBreak />
-            <LineBreak />If you use <Run FontWeight="Bold">BIN</Run>DAYS and enjoy the app then please rate it.
+            <LineBreak />If you use and enjoy <Run FontWeight="Bold">BIN</Run>DAYS, please rate it.
             A five star review will help the app enormously.
+            <LineBreak />
         </TextBlock>
 
-        <Grid   Grid.Row="2">
+        <Grid   Grid.Row="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -68,7 +69,8 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button Background="#FFB8B8B8" Foreground="White"  Click="NotNow" Style="{StaticResource CleanBtn}"
-                    HorizontalAlignment="Stretch" Padding="10" Margin="-8" Grid.Column="0" Grid.Row="0">
+                    HorizontalAlignment="Stretch" Padding="10" Margin="-8" Grid.Column="0" Grid.Row="0"
+                    VerticalAlignment="Stretch">
                 Remind me later
             </Button>
             <Button  Background="#FFB8B8B8" Foreground="White" Click="DontAskAgain" Style="{StaticResource CleanBtn}"
@@ -78,7 +80,10 @@
             </Button>
             <Button Background="#78C043" Foreground="White" Click="RateApp" Style="{StaticResource CleanBtn}"
                     HorizontalAlignment="Stretch" Padding="10" Margin="-8" Grid.Column="1" Grid.RowSpan="2">
-                Review
+                <TextBlock TextAlignment="Center">
+                    Review
+                    <LineBreak/><Run FontFamily="Segoe UI Symbol"></Run>
+                </TextBlock>
             </Button>
         </Grid>
     </Grid>

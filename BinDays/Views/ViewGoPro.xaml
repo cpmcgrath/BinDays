@@ -47,28 +47,40 @@
         <StackPanel Margin="12,0" Grid.Row="1" VerticalAlignment="Top">
             <TextBlock Margin="9,-7,0,0"
                        Style="{StaticResource PhoneTextTitle1Style}" Foreground="#7A7A7A">
-                GO <Run FontWeight="Bold">PRO</Run>
+                GO <Run  FontWeight="Bold" FontFamily="Segoe WP Semibold">PRO</Run>
             </TextBlock>
         </StackPanel>
-        <TextBlock Text="and get the small live tile..." Grid.Row="2" Margin="26,0,0,0" FontFamily="Segoe WP Semibold" FontSize="30" Height="52" VerticalAlignment="Top" HorizontalAlignment="Left" Width="376" />
-        <LiveTiles:Small Grid.Row="3"
-                         HorizontalAlignment="Left"
-                         Height="159" Width="159" Margin="26,0" >
-            <LiveTiles:Small.Projection>
-                <PlaneProjection RotationX="10"/>
-            </LiveTiles:Small.Projection>
-        </LiveTiles:Small>
+        <TextBlock Grid.Row="2" Margin="26,0,0,0" FontFamily="Segoe WP Semibold" FontSize="30" VerticalAlignment="Top" HorizontalAlignment="Left">
+            AND GET THE <Bold>SMALL LIVE TILE</Bold>
+        </TextBlock>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" RenderTransformOrigin="0.5,0.5" Margin="-61,0,-60,0">
+            <StackPanel.RenderTransform>
+                <CompositeTransform ScaleX="0.8" ScaleY="0.8"/>
+            </StackPanel.RenderTransform>
+            <LiveTiles:Small HorizontalAlignment="Left"
+                             Height="159" Width="159" Margin="30.478,47.522,0,4.477" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" UseLayoutRounding="False" d:LayoutRounding="Auto"
+                             ActualDay="TUE">
+            </LiveTiles:Small>
+            <LiveTiles:Small HorizontalAlignment="Left"
+                             Height="159" Width="159" Margin="30.478,47.522,0,4.477" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" UseLayoutRounding="False" d:LayoutRounding="Auto"
+                             HasRecycling="False">
+            </LiveTiles:Small>
+            <LiveTiles:Small HorizontalAlignment="Left"
+                             Height="159" Width="159" Margin="30.478,47.522,0,4.477" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2" UseLayoutRounding="False" d:LayoutRounding="Auto"
+                             ActualDay="THU">
+            </LiveTiles:Small>
+        </StackPanel>
 
-        <TextBlock FontFamily="Segoe WP Semibold" FontSize="30" Grid.Row="4" TextWrapping="Wrap"
+        <TextBlock FontFamily="Segoe WP" FontSize="22" Grid.Row="4" TextWrapping="Wrap"
                    Margin="26,0">
-            Show your Support for Quality Software by purchasing <Run FontWeight="Bold">BIN</Run>DAYS at a Great Price.
+            Show your Support for Quality Software by <Bold>purchasing BINDAYS at a great price.</Bold>
         </TextBlock>
 
         <Button Background="#FFB8B8B8" Foreground="White"  Click="NotNow" Style="{StaticResource CleanBtn}"
-                    HorizontalAlignment="Stretch" Padding="10" Margin="12,193,12,137" Grid.Column="0" Grid.Row="4" Grid.RowSpan="3">
+                    HorizontalAlignment="Stretch" Padding="10" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="6">
             Remind me later
         </Button>
-        <Button Grid.Row="6" Style="{StaticResource CleanBtn}"
+        <Button Grid.Row="5" Style="{StaticResource CleanBtn}"
                 Foreground="#7A7A7A" HorizontalAlignment="Center"
                 Click="GoToStore" Margin="0,0">
             <Image Source="/Images/462x120_WPS_Download_gry.png" />
