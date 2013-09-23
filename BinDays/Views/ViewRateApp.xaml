@@ -42,16 +42,18 @@
         <StackPanel Margin="12,0,0,28" Grid.Row="1" VerticalAlignment="Top">
             <TextBlock Margin="9,-7,0,0"
                        Style="{StaticResource PhoneTextTitle1Style}" Foreground="#7A7A7A">
-                LOVE <Run FontWeight="Bold">BIN</Run>DAYS? RATE IT!
+                RATE US
             </TextBlock>
         </StackPanel>
         <TextBlock Grid.Row="1" Margin="23,90,30,0" FontSize="24" VerticalAlignment="Top"
                    TextWrapping="Wrap">
-            A five star rating will help the app enormously.
+            <Bold>LOVE BINDAYS? RATE IT!</Bold>
+            <LineBreak />
+            <LineBreak />A five star rating will help the app enormously.
+            <LineBreak />
             <LineBreak />
             <Run FontFamily="Segoe WP Semibold">Ratings are the easiest way to support your favourite apps.</Run>
-            <LineBreak />
-            Developers like myself spend a lot of time creating apps. With thousands of apps in the marketplace,
+            <LineBreak />Developers spend a lot of time creating apps. With thousands of apps in the marketplace,
             it can be hard to get noticed.
             <LineBreak />Please rate <Run FontWeight="Bold">BIN</Run>DAYS and help us stand out from the crowd!
         </TextBlock>
@@ -74,6 +76,11 @@
                     HorizontalAlignment="Stretch" Padding="10" Margin="-8" Grid.Column="0" Grid.Row="1"
                     Visibility="{Binding IsTrial, Converter={StaticResource InvertVisibleConvert}}">
                 Don't ask again
+            </Button>
+            <Button Margin="-8" Grid.Column="0" Grid.Row="1" Style="{StaticResource CleanBtn}"
+                    Foreground="#7A7A7A" HorizontalAlignment="Center"
+                    Visibility="{Binding IsTrial, Converter={StaticResource VisibleConvert}}">
+                <Image Source="/Images/462x120_WPS_Download_gry.png" />
             </Button>
             <Button Background="#78C043" Foreground="White" Click="RateApp" Style="{StaticResource CleanBtn}"
                     HorizontalAlignment="Stretch" Padding="10" Margin="-8" Grid.Column="1" Grid.RowSpan="2">
