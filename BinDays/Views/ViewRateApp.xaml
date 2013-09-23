@@ -40,25 +40,23 @@
         </Grid>
 
         <StackPanel Margin="12,0,0,28" Grid.Row="1" VerticalAlignment="Top">
-            <TextBlock Text="RATE APP"
-                       Margin="9,-7,0,0"
-                       Style="{StaticResource PhoneTextTitle1Style}" Foreground="#7A7A7A"/>
+            <TextBlock Margin="9,-7,0,0"
+                       Style="{StaticResource PhoneTextTitle1Style}" Foreground="#7A7A7A">
+                LOVE <Run FontWeight="Bold">BIN</Run>DAYS? RATE IT!
+            </TextBlock>
         </StackPanel>
         <TextBlock Grid.Row="1" Margin="23,90,30,0" FontSize="24" VerticalAlignment="Top"
                    TextWrapping="Wrap">
-            <Run>Developers like myself spend a lot of time developing apps.</Run>
-            <LineBreak />With hundreds of thousands of apps in the marketplace,
-            it can be hard to get people to notice it.
+            A five star rating will help the app enormously.
             <LineBreak />
-            <Run FontFamily="Segoe WP Semibold">Ratings are the best way to support
-            developers of your favourite apps.</Run>
+            <Run FontFamily="Segoe WP Semibold">Ratings are the easiest way to support your favourite apps.</Run>
             <LineBreak />
-            <LineBreak />If you use and enjoy <Run FontWeight="Bold">BIN</Run>DAYS, please rate it.
-            A five star review will help the app enormously.
-            <LineBreak />
+            Developers like myself spend a lot of time creating apps. With thousands of apps in the marketplace,
+            it can be hard to get noticed.
+            <LineBreak />Please rate <Run FontWeight="Bold">BIN</Run>DAYS and help us stand out from the crowd!
         </TextBlock>
 
-        <Grid   Grid.Row="3">
+        <Grid Grid.Row="3">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -80,7 +78,7 @@
             <Button Background="#78C043" Foreground="White" Click="RateApp" Style="{StaticResource CleanBtn}"
                     HorizontalAlignment="Stretch" Padding="10" Margin="-8" Grid.Column="1" Grid.RowSpan="2">
                 <TextBlock TextAlignment="Center">
-                    Review
+                    Rate
                     <LineBreak/><Run FontFamily="Segoe UI Symbol"></Run>
                 </TextBlock>
             </Button>

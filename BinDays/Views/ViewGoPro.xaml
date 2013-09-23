@@ -72,7 +72,7 @@
 
         <TextBlock FontFamily="Segoe WP" FontSize="22" Grid.Row="4" TextWrapping="Wrap"
                    Margin="26,0">
-            Show your Support for Quality Software by <Bold>purchasing BINDAYS at a great price.</Bold>
+            Show your support for quality software by <Bold>purchasing BINDAYS at a great price.</Bold>
         </TextBlock>
 
         <Button Background="#FFB8B8B8" Foreground="White"  Click="NotNow" Style="{StaticResource CleanBtn}"
