@@ -135,7 +135,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\300px.png" />
-    <Content Include="Images\462x120_WPS_Download_gry.png" />
     <Content Include="Images\add.png" />
     <Content Include="Images\appbar.save.rest.png" />
     <Content Include="Images\Icon.png">
