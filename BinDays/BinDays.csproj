@@ -143,6 +143,10 @@
     <None Include="Properties\WMAppManifestFree.xml">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Images\Medium.png" />
+    <Content Include="Images\Small.png" />
+    <Content Include="Images\SmallFree.png" />
+    <Content Include="Images\Wide.png" />
     <Content Include="Properties\WMAppManifest.xml" />
     <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
     <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
