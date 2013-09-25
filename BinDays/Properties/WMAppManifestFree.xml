@@ -33,7 +33,6 @@
           <SmallImageURI IsResource="false" IsRelative="true">Images\SmallFree.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsResource="false" IsRelative="true">Images\Medium.png</BackgroundImageURI>
-          <Title>Bin Days Lite</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>

@@ -22,7 +22,7 @@
     </SupportedCultures>
     <XapOutputs>true</XapOutputs>
     <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
-    <XapFilename>BinDays_Free.xap</XapFilename>
+    <XapFilename>BinDays.xap</XapFilename>
     <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
     <SilverlightAppEntry>CMcG.BinDays.App</SilverlightAppEntry>
     <ValidateXaml>true</ValidateXaml>
@@ -79,6 +79,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIExtensions.cs" />
     <Compile Include="ViewModels\BinEditVM.cs" />
+    <Compile Include="ViewModels\BinTypeVM.cs" />
     <Compile Include="ViewModels\RubbishBinVM.cs" />
     <Compile Include="ViewModels\DayVM.cs" />
     <Compile Include="ViewModels\MainVM.cs" />

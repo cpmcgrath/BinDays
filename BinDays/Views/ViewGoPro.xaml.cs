@@ -13,7 +13,7 @@ namespace CMcG.BinDays.Views
 
         void GoToStore(object sender, RoutedEventArgs e)
         {
-            new MarketplaceDetailTask { ContentIdentifier = "" }.Show();
+            new MarketplaceDetailTask { ContentIdentifier = "1aa723f3-51ca-43f2-94f9-44a7a17505cd" }.Show();
             NavigationService.GoBack();
         }
 

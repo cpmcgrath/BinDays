@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en" />
-  <App xmlns="" ProductID="{B55DEDE5-CDCB-42FE-BFC6-D0412C41956F}" Title="Bin Days Pro" RuntimeType="Silverlight" Version="3.0.0.0" Genre="apps.normal" Author="Chris McGrath"
+  <App xmlns="" ProductID="{B55DEDE5-CDCB-42FE-BFC6-D0412C41956F}" Title="Bin Days Pro" RuntimeType="Silverlight" Version="4.0.0.0" Genre="apps.normal" Author="Chris McGrath"
        Description="Live tile for bin days" Publisher="Chris McGrath" PublisherID="{8dc27dc2-8a0d-4c88-82e0-fb94a6efa08b}">
     <IconPath IsRelative="true" IsResource="false">Images\Small.png</IconPath>
     <Capabilities>
@@ -33,7 +33,6 @@
           <SmallImageURI IsResource="false" IsRelative="true">Images\Small.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsResource="false" IsRelative="true">Images\Medium.png</BackgroundImageURI>
-          <Title>Bin Days Pro</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>

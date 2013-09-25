@@ -9,7 +9,7 @@ namespace CMcG.BinDays
         public BinEditVM()
         {
             Status       = new AppStatus { AutoRemove = true };
-            BinType      = BinDays.BinType.GeneralWaste;
+            BinType      = new BinTypeVM(BinDays.BinType.GeneralWaste);
             OriginDate   = DateTime.Today;
             WeekInterval = 1;
             EditType     = "NEW";
@@ -21,7 +21,7 @@ namespace CMcG.BinDays
             using (var store = new DataStoreContext())
             {
                 var bin      = store.RubbishBins.First(x => x.Id == id);
-                BinType      = bin.BinType;
+                BinType      = new BinTypeVM(bin.BinType);
                 OriginDate   = bin.OriginDate;
                 WeekInterval = bin.Interval / 7;
             }
@@ -29,14 +29,14 @@ namespace CMcG.BinDays
             Id       = id;
         }
 
-        public BinType[] BinTypeList
+        public BinTypeVM[] BinTypeList
         {
-            get { return Enum.GetValues(typeof(BinType)).Cast<BinType>().ToArray(); }
+            get { return BinTypeVM.GetVMs(); }
         }
 
         public int       Id           { get; set; }
         public string    EditType     { get; set; }
-        public BinType   BinType      { get; set; }
+        public BinTypeVM BinType      { get; set; }
         public DateTime  OriginDate   { get; set; }
         public int       WeekInterval { get; set; }
         public AppStatus Status       { get; private set; }
@@ -54,7 +54,7 @@ namespace CMcG.BinDays
 
                 bin = new RubbishBin
                 {
-                    BinType    = BinType,
+                    BinType    = BinType.Key,
                     OriginDate = OriginDate,
                     Interval   = WeekInterval * 7
                 };
