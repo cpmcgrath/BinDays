@@ -13,26 +13,14 @@
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
-    <Grid x:Name="LayoutRoot">
+    <Grid x:Name="LayoutRoot" Background="{StaticResource MainBackground}">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid.Background>
-            <LinearGradientBrush EndPoint="1,0.5" StartPoint="0.5,0">
-                <GradientStop Color="#ECECEC" Offset="0"/>
-                <GradientStop Color="#DEDEE0" Offset="1"/>
-            </LinearGradientBrush>
-        </Grid.Background>
-        <Grid HorizontalAlignment="Stretch">
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="1,0.5" StartPoint="0.5,0">
-                    <GradientStop Color="#79C443" Offset="0"/>
-                    <GradientStop Color="#A3FE5B" Offset="1"/>
-                </LinearGradientBrush>
-            </Grid.Background>
+        <Grid HorizontalAlignment="Stretch" Background="{StaticResource HeaderBackground}">
             <TextBlock Margin="20,0" FontSize="40" FontFamily="Segoe WP Light"
                        Foreground="White">
                 <Run Text="BIN" FontWeight="Bold" /><Run Text="DAYS" />

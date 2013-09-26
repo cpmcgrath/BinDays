@@ -27,8 +27,8 @@
             </LinearGradientBrush>
 
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Themes/CleanBtn.xaml" />
-                <ResourceDictionary Source="/Themes/RubbishBinVMStyle.xaml" />
+                <ResourceDictionary Source="Themes/CleanBtn.xaml" />
+                <ResourceDictionary Source="Themes/RubbishBinVMStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 
