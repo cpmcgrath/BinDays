@@ -46,20 +46,20 @@
             </TextBlock>
         </StackPanel>
         <StackPanel Grid.Row="1" Margin="23,85,30,0" VerticalAlignment="Top">
-            <TextBlock FontSize="24" TextWrapping="Wrap" Margin="0,5">
-                <Bold>LOVE BINDAYS? RATE IT!</Bold>
+            <TextBlock Style="{StaticResource AdvertText}" FontWeight="Bold">
+                LOVE BINDAYS? RATE IT!
             </TextBlock>
-            <TextBlock FontSize="24" TextWrapping="Wrap" Margin="0,5">
+            <TextBlock Style="{StaticResource AdvertText}">
                 A five star rating will help enormously.
             </TextBlock>
-            <TextBlock FontSize="24" TextWrapping="Wrap" FontFamily="Segoe WP Semibold" Margin="0,5">
+            <TextBlock Style="{StaticResource AdvertText}" FontFamily="Segoe WP Semibold">
                 Ratings are the easiest way to support your favourite apps.
             </TextBlock>
-            <TextBlock FontSize="24" TextWrapping="Wrap" Margin="0,5">
+            <TextBlock Style="{StaticResource AdvertText}">
                 Developers spend a lot of time creating apps. With thousands of apps in the marketplace,
                 it can be hard to get noticed.
             </TextBlock>
-            <TextBlock FontSize="24" TextWrapping="Wrap" Margin="0,5">
+            <TextBlock Style="{StaticResource AdvertText}">
                 Please rate <Run FontWeight="Bold">BIN</Run>DAYS and help us stand out from the crowd!
             </TextBlock>
         </StackPanel>
@@ -72,20 +72,20 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Background="#FFB8B8B8" Foreground="White"  Click="NotNow" Style="{StaticResource CleanBtn}"
+            <Button Click="NotNow" Style="{StaticResource GreyCleanBtn}"
                     HorizontalAlignment="Stretch" Padding="10" Margin="-8" Grid.Column="0" Grid.Row="0"
                     VerticalAlignment="Stretch">
                 Remind me later
             </Button>
-            <Button Background="#FFB8B8B8" Foreground="White" Click="DontAskAgain" Style="{StaticResource CleanBtn}"
+            <Button Click="DontAskAgain" Style="{StaticResource GreyCleanBtn}"
                     HorizontalAlignment="Stretch" Padding="10" Margin="-8" Grid.Column="0" Grid.Row="1"
                     Visibility="{Binding IsTrial, Converter={StaticResource InvertVisibleConvert}}">
                 Don't ask again
             </Button>
-            <Button Margin="-8" Grid.Column="0" Grid.Row="1" Style="{StaticResource CleanBtn}"
-                    Foreground="#7A7A7A" HorizontalAlignment="Center"
+            <Button Margin="-8" Grid.Column="0" Grid.Row="1" Style="{StaticResource GreyCleanBtn}"
+                    HorizontalAlignment="Center"
                     Visibility="{Binding IsTrial, Converter={StaticResource VisibleConvert}}" Click="GoToStore">
-                <Grid Width="240" Height="60" Background="#FFB8B8B8" Margin="-10,-3,-10,-5">
+                <Grid Width="240" Height="60"  Margin="-10,-3,-10,-5">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="9*"/>
                         <RowDefinition Height="6*"/>
@@ -111,7 +111,7 @@
                     </TextBlock>
                 </Grid>
             </Button>
-            <Button Background="#78C043" Foreground="White" Click="RateApp" Style="{StaticResource CleanBtn}"
+            <Button Click="RateApp" Style="{StaticResource GreenCleanBtn}"
                     HorizontalAlignment="Stretch" Padding="10" Margin="-8" Grid.Column="1" Grid.RowSpan="2">
                 <TextBlock TextAlignment="Center">
                     Rate
