@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en" />
-  <App xmlns="" ProductID="{4af1d266-5ca0-4fe2-8572-29b6c38f0c55}" Title="Bin Days Lite" RuntimeType="Silverlight" Version="3.0.0.0" Genre="apps.normal" Author="Chris McGrath"
-       Description="Live tile for bin days" Publisher="Chris McGrath" PublisherID="{8dc27dc2-8a0d-4c88-82e0-fb94a6efa08b}">
+  <App xmlns="" ProductID="{4af1d266-5ca0-4fe2-8572-29b6c38f0c55}" Title="Bin Days Lite" RuntimeType="Silverlight" Version="4.0.0.0" Genre="apps.normal" Author="Chris McGrath"
+       Description="Can never remember if you have to take the recycling bin out or not? Now you don't have to! Just look at the beautiful live tile and you'll know when to take out the bins and which bins to take out."
+       Publisher="Chris McGrath" PublisherID="{8dc27dc2-8a0d-4c88-82e0-fb94a6efa08b}">
     <IconPath IsRelative="true" IsResource="false">Images\Small.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_IDENTITY_DEVICE" />
@@ -30,9 +31,10 @@
     <Tokens>
       <PrimaryToken TokenID="BinDaysToken" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsResource="false" IsRelative="true">Images\SmallFree.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">Images\SmallFree.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsResource="false" IsRelative="true">Images\Medium.png</BackgroundImageURI>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Images\Medium.png</BackgroundImageURI>
+          <Title></Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI>
@@ -41,7 +43,7 @@
           </BackTitle>
           <LargeBackgroundImageURI IsRelative="true" IsResource="false">Images\Wide.png</LargeBackgroundImageURI>
           <LargeBackContent />
-          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
+          <LargeBackBackgroundImageURI>
           </LargeBackBackgroundImageURI>
           <DeviceLockImageURI>
           </DeviceLockImageURI>
