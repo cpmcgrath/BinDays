@@ -42,7 +42,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="2" Margin="12,0">
-            <TextBlock Text="Bins type" Foreground="#7A7A7A" Margin="12,0" />
+            <TextBlock Text="Bins type" Margin="12,0" />
             <tk:ListPicker ItemsSource="{Binding BinTypeList}" SelectedItem="{Binding BinType, Mode=TwoWay}" Foreground="Black" Background="#f7f7f7" BorderBrush="Transparent">
                 <tk:ListPicker.FullModeItemTemplate>
                     <DataTemplate>
@@ -51,10 +51,10 @@
                 </tk:ListPicker.FullModeItemTemplate>
             </tk:ListPicker>
 
-            <TextBlock Text="Next collection is on" Foreground="#7A7A7A" Margin="12,0" />
+            <TextBlock Text="Next collection is on" Margin="12,0" />
             <tk:DatePicker Value="{Binding OriginDate, Mode=TwoWay}" Foreground="Black" Background="#f7f7f7" BorderBrush="Transparent" />
 
-            <TextBlock Text="Weeks between collections" Foreground="#7A7A7A" Margin="12,0" />
+            <TextBlock Text="Weeks between collections" Margin="12,0" />
             <TextBox Text="{Binding WeekInterval, Mode=TwoWay}" InputScope="Number" />
 
         </StackPanel>

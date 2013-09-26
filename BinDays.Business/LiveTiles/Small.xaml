@@ -26,15 +26,18 @@
                   Fill="#FFFFFFFF" Stretch="Uniform" Margin="7,0" />-->
         </StackPanel>
 
-        <TextBlock Grid.Row="1"
+        <TextBlock Grid.Row="1" Foreground="White"
                    Name="lblActualDay"
                    Text="WED" HorizontalAlignment="Center" FontFamily="Segoe WP Light" FontSize="48" />
 
         <Grid Name="Advertisement"  Background="#FF77C043" Grid.RowSpan="2" Visibility="Collapsed">
-            <TextBlock FontFamily="Segoe WP Semibold" FontSize="48" TextAlignment="Center" VerticalAlignment="Center" Margin="0,-20,0,0">
+            <TextBlock FontFamily="Segoe WP Semibold" FontSize="48" TextAlignment="Center" VerticalAlignment="Center" Margin="0,-20,0,0"
+                       Foreground="White">
                 GO<LineBreak/>PRO
             </TextBlock>
-            <TextBlock FontFamily="Segoe WP" FontSize="20" TextAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <TextBlock FontFamily="Segoe WP" FontSize="20" TextAlignment="Center"
+                       VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                       Foreground="White">
                 BIN DAYS
             </TextBlock>
         </Grid>

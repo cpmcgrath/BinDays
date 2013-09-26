@@ -9,7 +9,6 @@
                             mc:Ignorable="d"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
                             FontSize="{StaticResource PhoneFontSizeNormal}"
-                            Foreground="#7A7A7A"
                             SupportedOrientations="Portrait"  Orientation="Portrait"
                             shell:SystemTray.IsVisible="True">
 
@@ -106,7 +105,7 @@
             </phone:PivotItem>
         </phone:Pivot>
         <Button Grid.Row="2" Style="{StaticResource CleanBtn}"
-                Foreground="#7A7A7A" Padding="0" HorizontalAlignment="Center"
+                Padding="0" HorizontalAlignment="Center"
                 Visibility="{Binding IsTrial, Converter={StaticResource VisibleConvert}}"
                 Click="GoPro">
             <Grid Grid.Row="2">
