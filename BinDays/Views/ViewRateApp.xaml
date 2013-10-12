@@ -101,7 +101,7 @@
             </Button>
             <Button Click="RateApp" Style="{StaticResource GreenCleanBtn}"
                     HorizontalAlignment="Stretch" Padding="10" Margin="-8" Grid.Column="1" Grid.RowSpan="2">
-                <TextBlock TextAlignment="Center">
+                <TextBlock TextAlignment="Center" Foreground="White">
                     Rate
                     <LineBreak/><Run FontFamily="Segoe UI Symbol"></Run>
                 </TextBlock>
