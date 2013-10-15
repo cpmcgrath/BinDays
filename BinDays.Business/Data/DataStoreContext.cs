@@ -14,20 +14,9 @@ namespace CMcG.BinDays
             new DataStoreUpdater().Upgrade(this);
         }
 
-        public Table<Setup> Setup
-        {
-            get { return GetTable<Setup>(); }
-        }
-
         public Table<RubbishBin> RubbishBins
         {
             get { return GetTable<RubbishBin>(); }
-        }
-
-        [Obsolete]
-        public Setup CurrentSetup
-        {
-            get { return Setup.FirstOrDefault() ?? new Setup(); }
         }
 
         public CollectionDay NextCollectionDay
