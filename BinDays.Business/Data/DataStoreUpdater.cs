@@ -30,30 +30,13 @@ namespace CMcG.BinDays
 
             switch (version)
             {
-                case 0 : UpgradeToVersion1(store, schema); break;
+                case 0 : store.DeleteDatabase(); Create(store); break;
 
                 default : return;
             }
 
             schema.DatabaseSchemaVersion = CURRENT_VERSION;
             schema.Execute();
-        }
-
-        void UpgradeToVersion1(DataStoreContext store, DatabaseSchemaUpdater schema)
-        {
-            schema.AddTable<RubbishBin>();
-            schema.Execute();
-
-            if (store.Setup.Any())
-            {
-                var general   = new RubbishBin { BinType = BinType.GeneralWaste, Interval = 7, OriginDate = store.CurrentSetup.DateOfCollection };
-                var recycling = new RubbishBin { BinType = BinType.Recycling, Interval = 14, OriginDate = store.CurrentSetup.DateOfCollection.AddDays(store.CurrentSetup.IsRecycling ? 0 : 7) };
-
-                store.RubbishBins.InsertAllOnSubmit(new[] { general, recycling });
-                store.Setup.DeleteAllOnSubmit(store.Setup);
-                store.SubmitChanges();
-            }
-
         }
     }
 }

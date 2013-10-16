@@ -57,7 +57,6 @@
     <Compile Include="Data\DataStoreUpdater.cs" />
     <Compile Include="Data\NotifyBase.cs" />
     <Compile Include="Data\RubbishBin.cs" />
-    <Compile Include="Data\Setup.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="LicenseInformation.cs" />
     <Compile Include="LiveTiles\Small.xaml.cs">
