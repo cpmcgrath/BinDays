@@ -26,19 +26,37 @@ namespace CMcG.BinDays.Business.LiveTiles
         public bool HasGeneral
         {
             get { return General.Visibility == Visibility.Visible; }
-            set { General.Visibility = value ? Visibility.Visible : Visibility.Collapsed; }
+            set { General.Visibility = AsVisibility(value); CheckView(); }
         }
 
         public bool HasRecycling
         {
             get { return Recycling.Visibility == Visibility.Visible; }
-            set { Recycling.Visibility = value ? Visibility.Visible : Visibility.Collapsed; }
+            set { Recycling.Visibility = AsVisibility(value); CheckView(); }
+        }
+
+        public bool HasGreen
+        {
+            get { return Green.Visibility == Visibility.Visible; }
+            set { Green.Visibility = AsVisibility(value); CheckView(); }
+        }
+
+        void CheckView()
+        {
+            bool all = HasGeneral && HasRecycling && HasGreen;
+            AllThree.Visibility = AsVisibility( all);
+            Main    .Visibility = AsVisibility(!all);
+        }
+
+        Visibility AsVisibility(bool value)
+        {
+            return value ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public bool IsAdvertisement
         {
             get { return Advertisement.Visibility == Visibility.Visible; }
-            set { Advertisement.Visibility = value ? Visibility.Visible : Visibility.Collapsed; }
+            set { Advertisement.Visibility = AsVisibility(value); }
         }
 
         public bool IsBold

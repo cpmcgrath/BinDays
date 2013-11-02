@@ -36,10 +36,11 @@ namespace CMcG.BinDays.Business.LiveTiles
         {
             var tile = new Small
             {
-                ActualDay    = data.Date.DayOfWeek.ToString().Substring(0, 3).ToUpper(),
-                HasGeneral   = data.IsGeneralWaste,
-                HasRecycling = data.IsRecycling,
-                IsBold       = data.Date == DateTime.Today || data.Date == DateTime.Today.AddDays(1),
+                ActualDay       = data.Date.DayOfWeek.ToString().Substring(0, 3).ToUpper(),
+                HasGeneral      = data.IsGeneralWaste,
+                HasRecycling    = data.IsRecycling,
+                HasGreen        = data.IsGreen,
+                IsBold          = data.Date == DateTime.Today || data.Date == DateTime.Today.AddDays(1),
                 IsAdvertisement = LicenseInformation.IsTrial
             };
             Export(tile, 159, 159, "/Shared/ShellContent/SmallTile.jpg");
@@ -52,6 +53,7 @@ namespace CMcG.BinDays.Business.LiveTiles
                 ActualDay    = data.Date.DayOfWeek.ToRelativeString().ToUpper(),
                 HasGeneral   = data.IsGeneralWaste,
                 HasRecycling = data.IsRecycling,
+                HasGreen     = data.IsGreen
             };
             Export(tile, 336, 336, "/Shared/ShellContent/StandardTile.jpg");
         }
@@ -60,11 +62,11 @@ namespace CMcG.BinDays.Business.LiveTiles
         {
             var tile = new Wide
             {
-                ActualDate  = data.Date.ToRelativeString().ToUpper(),
-                ActualDay   = data.Date.DayOfWeek.ToString().ToUpper(),
-                HasGeneral  = data.IsGeneralWaste,
+                ActualDate   = data.Date.ToRelativeString().ToUpper(),
+                ActualDay    = data.Date.DayOfWeek.ToString().ToUpper(),
+                HasGeneral   = data.IsGeneralWaste,
                 HasRecycling = data.IsRecycling,
-                HasGreen     = data.IsGreen,
+                HasGreen     = data.IsGreen
             };
             Export(tile, 691, 336, "/Shared/ShellContent/WideTile.jpg");
         }

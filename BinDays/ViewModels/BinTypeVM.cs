@@ -8,7 +8,7 @@ namespace CMcG.BinDays
     {
         public static BinTypeVM[] GetVMs()
         {
-            return new[] { BinType.GeneralWaste, BinType.Recycling }.Select(x => new BinTypeVM(x)).ToArray();
+            return Enum.GetValues(typeof(BinType)).Cast<BinType>().Select(x => new BinTypeVM(x)).ToArray();
         }
 
         public BinTypeVM(BinType key)
