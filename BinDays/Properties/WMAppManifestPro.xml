@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
   <DefaultLanguage xmlns="" code="en" />
-  <App xmlns="" ProductID="{B55DEDE5-CDCB-42FE-BFC6-D0412C41956F}" Title="Bin Days Pro" RuntimeType="Silverlight" Version="4.0.0.0" Genre="apps.normal" Author="Chris McGrath"
+  <App xmlns="" ProductID="{B55DEDE5-CDCB-42FE-BFC6-D0412C41956F}" Title="Bin Days Pro" RuntimeType="Silverlight" Version="5.0.0.0" Genre="apps.normal" Author="Tiled Development"
        Description="Can never remember if you have to take the recycling bin out or not? Now you don't have to! Just look at the beautiful live tile and you'll know when to take out the bins and which bins to take out."
-       Publisher="Chris McGrath" PublisherID="{8dc27dc2-8a0d-4c88-82e0-fb94a6efa08b}">
+       Publisher="Tiled Development" PublisherID="{8dc27dc2-8a0d-4c88-82e0-fb94a6efa08b}">
     <IconPath IsRelative="true" IsResource="false">Images\Small.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />

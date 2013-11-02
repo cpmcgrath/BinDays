@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Bin Days")]
-[assembly: AssemblyCopyright("Copyright © Chris McGrath 2012")]
+[assembly: AssemblyCopyright("Copyright © Tiled Development 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,6 +32,6 @@ using System.Resources;
 //
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("4.0.0.0")]
-[assembly: AssemblyFileVersion("4.0.0.0")]
+[assembly: AssemblyVersion    ("5.0.0.0")]
+[assembly: AssemblyFileVersion("5.0.0.0")]
 [assembly: NeutralResourcesLanguageAttribute("en-US")]

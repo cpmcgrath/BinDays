@@ -32,12 +32,14 @@
         </StackPanel>
         <TextBlock Grid.Row="1" Margin="23,90,30,0" FontSize="24" VerticalAlignment="Top"
                    TextWrapping="Wrap">
-            Version 4.0
+            Version 5.0
         </TextBlock>
 
         <TextBlock Grid.Row="1" Margin="23,137,30,0" FontSize="24" VerticalAlignment="Top"
                    TextWrapping="Wrap">
-            <Run FontWeight="Bold">BIN</Run>DAYS is Developed by Chris McGrath. The User Interface was designed by Martin Krestan.
+            <Run FontWeight="Bold">BIN</Run>DAYS is developed by Tiled Development.
+            <LineBreak/>Written by Chris McGrath.
+            <LineBreak/>The User Interface was designed by Martin Krestan.
         </TextBlock>
 
     </Grid>
